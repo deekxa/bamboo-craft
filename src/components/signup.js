@@ -23,14 +23,14 @@ export default function Signup()
         <div>
           <label className="block text-lg font-medium">Email Address</label>
           <input
-            className="w-full p-3 mt-1 border border-gray-300 rounded-xl bg-transparent"
+            className="w-full p-3 mt-2 border border-gray-300 rounded-xl bg-transparent"
             placeholder="Enter your Email"
           />
         </div>
         <div>
           <label className="block text-lg font-medium">Password</label>
           <input
-            className="w-full p-3 mt-1 border border-gray-300 rounded-xl bg-transparent"
+            className="w-full p-3 mt-2 border border-gray-300 rounded-xl bg-transparent"
             placeholder="Enter your Password"
             type="password"
           />
