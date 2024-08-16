@@ -21,7 +21,7 @@ const Navbar = () => {
             <div>Decor</div>
             <div>Personal Care</div>
           
-          <div> <Link to="/login">Login</Link> </div>           <div> <Link to="/Sign up">Signup</Link> </div>
+          <div> <Link to="/login">Login</Link> </div>           <div> <Link to="/signup">Signup</Link> </div>
           
 
         </div>
