@@ -1,4 +1,7 @@
 import React from 'react'
+import { FaSearch } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   return (
@@ -10,16 +13,19 @@ const Navbar = () => {
           className="h-full w-full object-cover"
         />
       </div>
-        <div className='flex justify-around gap-10 pr-5 items-center text-xl font-medium text-white '>
-            <div>Home</div>
-            <div>About Us</div>
+      
+        <div className=' text-xl font-medium text-white sm:flex items-center gap-10 hidden '>
+             <FaSearch />
+             <div> <Link to="/">Home</Link> </div>             <div> <Link to="/aboutUs">AboutUs</Link> </div>
             <div>Lighting</div>
             <div>Decor</div>
             <div>Personal Care</div>
+          
+          <div> <Link to="/login">Login</Link> </div>           <div> <Link to="/signup">Signup</Link> </div>
+          
 
         </div>
     </div>
   )
 }
-
 export default Navbar
