@@ -41,7 +41,7 @@ const formFields=[
       
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <input type="checkbox" id="terms and conditio" />
+            <input type="checkbox" id="terms and condition" />
             <label className="ml-2 text-sm" htmlFor="remember">I agree to terms and conditions</label>
           </div> 
         </div>
