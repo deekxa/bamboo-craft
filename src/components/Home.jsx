@@ -1,6 +1,7 @@
 import FeaturedSection from "./FeaturedSection"
 import Navbar from "./navbar/Navbar"
 
+
 const HomePage=()=>{
     return(
         <>
