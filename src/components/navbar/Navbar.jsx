@@ -16,7 +16,7 @@ const Navbar = () => {
       
         <div className=' text-xl font-medium text-white sm:flex items-center gap-10 hidden '>
              <FaSearch />
-             <div> <Link to="/">Home</Link> </div>             <div> <Link to="/aboutUs">AboutUs</Link> </div>
+             <div> <Link to="/">Home</Link> </div>             <div>About Us</div>
             <div>Lighting</div>
             <div>Decor</div>
             <div>Personal Care</div>
