@@ -6,7 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/Home";
 import Form from "./components/Login";
 import Signup from "./components/Signup";
-import { AboutUs } from "./components/AboutUs";
+import AboutUs from "./components/AboutUs";
+import  Footer  from "./components/Footer";
 
 
 
@@ -22,8 +23,6 @@ function App() {
         <Route path="/login" element={<Form />} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/aboutus" element={<AboutUs/>} />
-
-        
         
       
       </Routes>
