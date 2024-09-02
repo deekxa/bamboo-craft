@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import Footer from "../Footer";
+import { MdAddBox } from "react-icons/md";
+import { RiCheckboxIndeterminateFill } from "react-icons/ri";
 
 const ProductDetail = ({ image, title, description, specifications, cost }) => {
   const { id } = useParams();
+  const [count,setCount]=useState(1);
+  const [price,setPrice]=useState(cost);
+  const handleSub = ()=>{
+    if (count!==1){
+      setCount(count - 1)
+      // setPrice(cost-cost )
+    }
+  }
+  const handleAdd = ()=>{
+    // setPrice(cost + cost )
+
+
+      setCount(count + 1)
+    }
+  useEffect(()=>{
+    if (count!==0){
+      setPrice(cost*count) 
+
+    }
+  },[count])
+
+
 
   return (
     <>
@@ -28,8 +52,15 @@ const ProductDetail = ({ image, title, description, specifications, cost }) => {
                 </li>
               ))}
             </ul>
-            <div className="text-2xl font-bold text-green-600 mb-6">
-              RS {cost}
+            <div className="  text-2xl font-bold text-green-600 mb-6">
+              <div> RS {price}</div>
+              <div className="flex">
+                {/* <button onClick={handleSub}>-</button> */}
+                <RiCheckboxIndeterminateFill className="w-[40px] h-[40px]" onClick={handleSub} />
+                <div className="w-[50px] text-cyan-600 border-2 border-black text-center">{count}</div>
+                {/* <button onClick={handleAdd}>+</button> */}
+                <MdAddBox className="w-[40px] h-[40px]" onClick ={handleAdd} />
+              </div>
             </div>
             <button className="  w-full py-3 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
               Add to Cart
