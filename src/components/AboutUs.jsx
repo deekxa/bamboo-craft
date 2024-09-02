@@ -3,7 +3,7 @@ import Navbar from './navbar/Navbar';
 import { FaQuoteLeft } from "react-icons/fa";
 import Footer from './Footer';
 
-export const AboutUs = () => {
+ const AboutUs = () => {
   return (
     <>
       <Navbar />

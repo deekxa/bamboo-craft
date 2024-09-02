@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
 import Footer from "./Footer";
 
-export const Decor = () => {
+export const PersonalCare = () => {
   const array = [
     {
-      image: "../images/2.jpg",
-      title: "Premium Biodegradable Plates Set | 25 Plates, 25 Forks, 25 Knives",
+      image: "../images/sub.png",
+      title: "muji sala kawadi Plates Set | 25 Plates, 25 Forks, 25 Knives",
       ads: "Ads by Etsy seller",
       description: "This premium biodegradable plates set includes 25 plates, 25 forks, and 25 knives, making it perfect for any event or gathering. Made from eco-friendly materials, this set is designed to provide convenience without compromising on sustainability. Each piece is crafted to be sturdy and reliable, ensuring a pleasant dining experience.",
       specifications: [
@@ -107,7 +107,7 @@ export const Decor = () => {
   return (
     <>
       <Navbar />
-      <div className="text-2xl font-bold text-green-500 h-[10vh] items-center sm:text-3xl sm:leading-relaxed flex justify-center">Decor</div>
+      <div className="text-2xl font-bold text-green-500 h-[10vh] items-center sm:text-3xl sm:leading-relaxed flex justify-center">PersonalCare</div>
       <div className=" pb-10 px-10 grid grid-cols-4 gap-8">
         {array.map((data, index) => (
           <div key={index} className="shadow-md border border-gray-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300">
@@ -123,7 +123,8 @@ export const Decor = () => {
               <div className="ml-2 text-gray-600">({data.rate})</div>
             </div>
             <div className="text-lg font-bold text-green-600 mb-4">RS {data.cost}</div>
-            <Link to={`/productdetail/${index}`}>
+            <Link to={`/productdetail/personalcare/${index}`}>                   
+
               <button className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
                 View Details
               </button>
