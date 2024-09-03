@@ -59,13 +59,13 @@ const Form = () => {
           <div className="flex justify-between mb-4">
             <button
               onClick={() => toggleFormType()}
-              className={`py-2 px-4 rounded-xl ${!isSignup ? 'bg-violet-500 text-white' : 'bg-gray-200 text-gray-800'}`}
+              className={`py-2 px-4 rounded-xl ${!isSignup ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-800'}`}
             >
               Log In
             </button>
             <button
               onClick={() => toggleFormType()}
-              className={`py-2 px-4 rounded-xl ${isSignup ? 'bg-violet-500 text-white' : 'bg-gray-200 text-gray-800'}`}
+              className={`py-2 px-4 rounded-xl ${isSignup ? 'bg-green-500 text-white' : 'bg-gray-200 text-gray-800'}`}
             >
               Sign Up
             </button>
@@ -101,7 +101,7 @@ const Form = () => {
             <div className="flex flex-col gap-4">
               <button
                 type="submit"
-                className="py-4 rounded-xl bg-violet-500 text-white font-bold transition-transform transform hover:scale-105"
+                className="py-4 rounded-xl bg-green-500 text-white font-bold transition-transform transform hover:scale-105"
               >
                 {isSignup ? 'Create Account' : 'Log In'}
               </button>
@@ -112,7 +112,7 @@ const Form = () => {
               {isSignup ? 'Already have an account? Click here to ' : 'Don’t have an account? Click here to '}
               <button
                 onClick={() => toggleFormType()}
-                className="text-violet-500 ml-1"
+                className="text-green-500 ml-1"
               >
                 {isSignup ? 'log in' : 'sign up'}
               </button>

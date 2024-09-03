@@ -1,6 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
@@ -82,7 +83,7 @@ const Navbar = () => {
             to="/login"
             className="hover:text-yellow-300 transition duration-300"
           >
-            Login/Signup
+          <FaUser />
           </Link>
         </div>
       </div>

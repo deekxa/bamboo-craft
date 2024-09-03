@@ -7,106 +7,105 @@ import Footer from "./Footer";
 export const Lighting = () => {
   const array = [
     {
-      image: "../images/cone.jpg ",
-      title: "Rustic Cone Shaped Asian Pendant Light | Black Cable Set",
-      ads: "Ads by Artisan Lighting",
-      description: "Introduce a touch of rustic charm to your space with the Cone Shaped Asian Pendant Light. This striking pendant light features a distinctive cone shape with a textured finish that evokes traditional Asian aesthetics. The black cable set adds a contemporary contrast, making it a perfect fit for both modern and rustic interiors. Ideal for illuminating dining areas, living rooms, or entryways, this pendant light blends functionality with unique design.",
+      image: "../images/tablelamp.jpeg",
+      title: "Tatami Table Lamp | Design B | Compact & Elegant Lighting Solution",
+      ads: "Illuminate Your Space with the Tatami Table Lamp - Modern & Minimalist Design",
+      description: "The Tatami Table Lamp in Design B is a perfect blend of modern elegance and functional lighting. With a compact diameter of 18.5 cm and a height of 42 cm, this lamp is designed to add a touch of sophistication to any room. The minimalist aesthetic, combined with high-quality materials, makes it an ideal choice for those looking to enhance their home decor with a stylish and efficient lighting solution.",
       specifications: [
-        "Material: Metal with Rustic Finish",
-        "Dimensions: 10 inches (Diameter) x 12 inches (Height)",
-        "Weight: 1.5 kg",
-        "Color: Black Cable, Rustic Cone Shade",
-        "Bulb Type: E27 (not included)",
-        "Usage: Ideal for indoor use, suitable for rustic and Asian-inspired decor",
-        "Care Instructions: Wipe with a dry cloth, avoid using abrasive cleaners"
+        "Design: B",
+        "Dimensions: 18.5 cm (Diameter) x 42 cm (Height)",
+        "Material: Premium Bamboo & Tatami",
+        "Color: Natural & Neutral Tones",
+        "Light Source: LED (Included)",
+        "Usage: Table Lamp, Ideal for Living Rooms, Bedrooms, or Offices",
+        "Care Instructions: Wipe clean with a dry cloth, avoid using abrasive cleaners"
       ],
       rate: 40,
-      cost: 3000
-    },
-    {
-      image: "../images/mushroom.jpg",
-      title: "Mianzi Mushroom Bamboo Pendant Lamp | Minimalist Hanging Light Fixture",
-      ads: "Ads by Etsy",
-      description: "Elevate your interior with the Mianzi Mushroom Bamboo Pendant Lamp, a stunning minimalist light fixture that combines traditional craftsmanship with modern design. Handmade from sustainable bamboo, this pendant lamp features a unique mushroom shape that adds a touch of elegance to any space. Perfect for creating a serene and sophisticated atmosphere in both Asian and Scandinavian-inspired interiors. Ideal for use in living rooms, dining areas, or as a statement piece in any room.",
-      specifications: [
-        "Material: Sustainable Bamboo",
-        "Dimensions: 12 inches (Diameter) x 8 inches (Height)",
-        "Weight: 2 kg",
-        "Color: Natural Bamboo",
-        "Bulb Type: E27 (not included)",
-        "Usage: Ideal for indoor lighting, suitable for modern, minimalist, Asian, and Scandinavian decor",
-        "Care Instructions: Dust regularly, wipe with a dry cloth to maintain appearance"
-      ],
-      rate: 45,
-      cost: 4200
-    },
-    {
-      image: "../images/boho.jpg",
-      title: "Bamboo Elle Natural Lighting | Aesthetic Eco Chandelier",
-      ads: "Ads by Etsy",
-      description: "Enhance your home decor with the Bamboo Elle Natural Lighting, an exquisite eco-friendly chandelier that adds a touch of natural elegance to any space. Crafted from high-quality bamboo, this chandelier combines aesthetics with sustainability. Its unique design complements both modern and boho interiors, making it a versatile choice for various settings. Perfect for illuminating living rooms, dining areas, or any space that benefits from a natural, sophisticated lighting solution.",
-      specifications: [
-        "Material: Natural Bamboo",
-        "Dimensions: 18 inches (Diameter) x 10 inches (Height)",
-        "Weight: 3 kg",
-        "Color: Natural Bamboo",
-        "Bulb Type: E27 (not included)",
-        "Usage: Indoor lighting, ideal for living rooms, dining areas, and stylish home decor",
-        "Care Instructions: Dust regularly, wipe with a damp cloth as needed"
-      ],
-      rate: 50,
-      cost: 5500
-    },
-    {
-      image: "../images/floorlamp.jpg",
-      title: "Elegant Bamboo Floor Lamp | Eco-Friendly Lighting Solution",
-  ads: "Ads by Artisan Lighting Co.",
-  description: "Illuminate your living space with this elegant bamboo floor lamp. Handcrafted by skilled artisans, this lamp adds a touch of natural beauty to any room. Its sleek design and eco-friendly materials make it not only a stylish addition to your decor but also a sustainable choice for your home. The warm, ambient light it provides creates a cozy atmosphere, perfect for relaxation or entertaining guests.",
-  specifications: [
-    "Material: 100% Bamboo",
-    "Dimensions: 60 inches (Height) x 12 inches (Base Diameter)",
-    "Weight: 2.5 kg",
-    "Color: Natural Bamboo with a subtle gloss finish",
-    "Bulb Type: LED (included)",
-    "Usage: Indoor lighting, suitable for living rooms, bedrooms, and reading nooks",
-    "Care Instructions: Wipe with a dry cloth, avoid direct contact with water"
-  ],
-  rate: 48,
-  cost: 4500
-    },
-    {
-      image: "../images/pendent.jpg",
-      title: "Petal Pendant Lights | Natural Rattan Lamp Elegance for Your Home",
-      ads: "Ads by Rattan Interiors",
-      description: "Enhance the charm of your home with the Petal Pendant Lights, crafted from natural rattan. This pendant light features a unique petal design that brings a touch of elegance and warmth to any space. Its natural material and delicate design make it a stunning addition to living rooms, dining areas, or entryways. The soft, ambient light it emits creates a cozy and inviting atmosphere, perfect for any home decor style.",
-      specifications: [
-        "Material: Natural Rattan",
-        "Dimensions: 18 inches (Diameter) x 12 inches (Height)",
-        "Weight: 1.8 kg",
-        "Color: Natural Rattan with a light varnish finish",
-        "Bulb Type: E26 (not included)",
-        "Usage: Indoor lighting, ideal for living rooms, dining areas, and entryways",
-        "Care Instructions: Dust regularly, wipe with a dry cloth"
-      ],
-      rate: 42,
       cost: 3500
     },
     {
-      image: "../images/petel.jpg",
-      title: "Kalimantan Trio Bamboo Pendant Light | Natural Elegance for Your Space",
-  ads: "Ads by Bamboo Crafts",
-  description: "Illuminate your home with the Kalimantan Trio Bamboo Pendant Light, featuring three natural bamboo shades. This pendant light offers a stylish and eco-friendly lighting solution with its unique design and sustainable materials. Each bamboo shade casts a warm, inviting glow, making it a perfect addition to modern and rustic interiors alike. Ideal for dining areas, living rooms, or entryways, it combines function and aesthetic appeal.",
+      image: "../images/solarlarteen.jpeg",
+      title: "1 Pack Portable Waterproof Candle Light Outdoor Solar Lanterns | Dazuma",
+  ads: "Brighten Your Outdoors with Dazuma Solar Lanterns - Durable & Eco-Friendly Lighting",
+  description: "Illuminate your outdoor space with the Dazuma Portable Waterproof Candle Light Solar Lantern. Designed for durability and efficiency, this lantern features a solar-powered LED light, making it a sustainable choice for outdoor lighting. Its waterproof design ensures reliable performance in various weather conditions, while its portable nature makes it perfect for camping, hiking, or any outdoor adventure.",
   specifications: [
-    "Material: Natural Bamboo",
-    "Dimensions: 12 inches (Diameter per shade) x 8 inches (Height per shade)",
-    "Weight: 2.5 kg",
-    "Color: Natural Bamboo",
-    "Bulb Type: E27 (not included)",
-    "Usage: Indoor lighting, suitable for dining areas, living rooms, and entryways",
-    "Care Instructions: Wipe with a damp cloth, avoid direct water contact"
+    "Type: Portable Solar Lantern",
+    "Features: Waterproof, Solar-Powered LED",
+    "Material: High-Durability Plastic and Metal",
+    "Color: Neutral Tones",
+    "Dimensions: Compact and Lightweight",
+    "Usage: Outdoor Lighting, Camping, Hiking",
+    "Care Instructions: Keep away from extreme weather conditions, clean with a damp cloth"
+  ],
+  rate: 25,
+  cost: 1200
+    },
+    {
+      image: "../images/handknittedlampp.jpeg",
+      title: "Modern Hand Knitted Bamboo Table Lamp | Diameter 17cm, Height 42cm | EU Plug",
+  ads: "Elegant Hand Knitted Bamboo Table Lamp - Stylish & Eco-Friendly Lighting Solution",
+  description: "Elevate your interior decor with this Modern Hand Knitted Bamboo Table Lamp. Crafted with intricate hand-knitted bamboo, this lamp combines natural aesthetics with contemporary design. Its compact diameter of 17cm and height of 42cm make it a versatile addition to any room. The EU plug ensures compatibility with European outlets, providing both functionality and style. Perfect for adding a touch of eco-friendly elegance to your living space.",
+  specifications: [
+    "Type: Hand Knitted Bamboo Table Lamp",
+    "Dimensions: Diameter 17cm, Height 42cm",
+    "Material: Bamboo",
+    "Plug Type: EU Plug",
+    "Design: Modern, Hand-Knitted",
+    "Usage: Indoor Lighting",
+    "Care Instructions: Wipe with a soft cloth, avoid moisture"
   ],
   rate: 45,
-  cost: 4500
+  cost: 2500
+    },
+    {
+      image: "../images/twistedlight.jpeg",
+      title: "Creative Asian Style Twisted Bamboo Mesh Pendant Light | 1-Light Beige Ceiling Suspension Lamp",
+  ads: "Elegant Asian-Inspired Twisted Bamboo Mesh Pendant Light - Unique & Stylish",
+  description: "Illuminate your space with the Creative Asian Style Twisted Bamboo Mesh Pendant Light. This one-light ceiling suspension lamp features a unique twisted bamboo mesh design, offering a blend of traditional Asian aesthetics and modern elegance. The beige color and intricate craftsmanship make it a standout piece, perfect for enhancing the ambiance of any room. Ideal for living areas, dining spaces, or bedrooms, this pendant light brings a touch of sophistication and cultural charm to your home.",
+  specifications: [
+    "Type: Twisted Bamboo Mesh Pendant Light",
+    "Light Source: 1 Light",
+    "Color: Beige",
+    "Design: Asian-Inspired, Ceiling Suspension",
+    "Material: Bamboo",
+    "Usage: Indoor Lighting",
+    "Dimensions: Specific dimensions not provided",
+    "Care Instructions: Wipe with a soft cloth, avoid moisture"
+  ],
+  rate: 50,
+  cost: 3000
+    },
+    {
+      image: "../images/floorlamp.jpeg",
+      title: "Bamboo Floor Lamp | Illuminate Your Space",
+  ads: "Stylish Bamboo Floor Lamp - Perfect for Any Room",
+  description: "Brighten up your home with the Bamboo Floor Lamp, a stylish and eco-friendly lighting solution that enhances any room. This floor lamp features a sleek bamboo design that adds a touch of natural elegance to your living space. With its minimalist and contemporary look, it's perfect for creating a warm and inviting atmosphere. Ideal for living rooms, bedrooms, or offices, this lamp combines functionality with sustainability, making it a practical choice for modern homes.",
+  specifications: [
+    "Type: Floor Lamp",
+    "Material: Bamboo",
+    "Design: Sleek and Modern",
+    "Usage: Indoor Lighting",
+    "Dimensions: Specific dimensions not provided",
+    "Care Instructions: Dust regularly with a soft cloth"
+  ],
+  rate: 45,
+  cost: 2500
+    },
+    {
+      image: "../images/bedroomlamp.jpeg",
+      title: "Bamboo Lamps | Bedroom & Desk Lamps | Ambient Lighting",
+      ads: "Japanese Hand-Made & Natural Bamboo Lamps | Unique Design",
+      description: "Elevate your space with our Bamboo Lamps, designed to offer both style and functionality. Perfect for bedroom or desk use, these hand-made lamps feature a unique Japanese-inspired design that brings a touch of natural elegance to any room. Standing at a medium height of 40 cm, these lamps provide ambient lighting that enhances the atmosphere while being eco-friendly. Crafted from natural bamboo, each lamp showcases a blend of traditional craftsmanship and modern aesthetics.",
+      specifications: [
+        "Type: Bedroom and Desk Lamps",
+        "Material: Natural Bamboo",
+        "Design: Japanese Hand-Made, Unique",
+        "Dimensions: Medium, 40 cm height",
+        "Usage: Ambient Lighting",
+        "Care Instructions: Wipe clean with a damp cloth"
+      ],
+      rate: 50,
+      cost: 2200
     },
   ];
 
@@ -130,7 +129,7 @@ export const Lighting = () => {
               <div className="ml-2 text-gray-600">({data.rate})</div>
             </div>
             <div className="text-lg font-bold text-green-600 mb-4">RS {data.cost}</div>
-            <Link to={`/productdetail/lighting/${index}`}>
+            <Link to={`/lighting/${index}`}>
 
               <button className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
                 View Details

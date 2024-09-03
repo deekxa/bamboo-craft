@@ -57,12 +57,12 @@ const ProductDetail = ({ image, title, description, specifications, cost }) => {
               <div className="flex">
                 {/* <button onClick={handleSub}>-</button> */}
                 <RiCheckboxIndeterminateFill className="w-[40px] h-[40px]" onClick={handleSub} />
-                <div className="w-[50px] text-cyan-600 border-2 border-black text-center">{count}</div>
+                <div className="w-[50px] text-green-600 text-center">{count}</div>
                 {/* <button onClick={handleAdd}>+</button> */}
                 <MdAddBox className="w-[40px] h-[40px]" onClick ={handleAdd} />
               </div>
             </div>
-            <button className="  w-full py-3 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
+            <button className="  w-full py-3 px-6 bg-green-400 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
               Add to Cart
             </button>
           </div>

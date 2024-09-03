@@ -7,7 +7,7 @@ import Footer from "./Footer";
 export const Decor = () => {
   const array = [
     {
-      image: "../images/2.jpg",
+      image: "../images/Bamboo Plates.jpeg",
       title: "Premium Biodegradable Plates Set | 25 Plates, 25 Forks, 25 Knives",
       ads: "Ads by Etsy seller",
       description: "This premium biodegradable plates set includes 25 plates, 25 forks, and 25 knives, making it perfect for any event or gathering. Made from eco-friendly materials, this set is designed to provide convenience without compromising on sustainability. Each piece is crafted to be sturdy and reliable, ensuring a pleasant dining experience.",
@@ -55,7 +55,7 @@ export const Decor = () => {
       cost: 1500,
     },
     {
-      image: "../images/decor.png",
+      image: "../images/cutlarysets.jpeg",
       title: "Bamboo Cutlery Set | Travel-Friendly | 100% Biodegradable",
       ads: "Ads by EcoLiving",
       description: "This bamboo cutlery set is designed for travelers who value sustainability. The set includes forks, knives, and spoons, all made from 100% biodegradable bamboo. Conveniently portable and eco-friendly, it's perfect for meals on the go or picnics.",
@@ -71,7 +71,7 @@ export const Decor = () => {
       cost: 1200,
     },
     {
-      image: "../images/board.webp",
+      image: "../images/cuttingboard.jpeg",
       title: "Sustainable Bamboo Kitchen Utensils | 5-Piece Set | Ergonomic Design",
       ads: "Ads by Earthwise",
       description: "This set of five bamboo kitchen utensils combines functionality with sustainability. Each piece is ergonomically designed for comfort and ease of use, and made from 100% bamboo, ensuring durability and eco-friendliness. Perfect for all your cooking needs.",
@@ -123,7 +123,7 @@ export const Decor = () => {
               <div className="ml-2 text-gray-600">({data.rate})</div>
             </div>
             <div className="text-lg font-bold text-green-600 mb-4">RS {data.cost}</div>
-            <Link to={`/productdetail/${index}`}>
+            <Link to={`/decor/${index}`}>
               <button className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
                 View Details
               </button>

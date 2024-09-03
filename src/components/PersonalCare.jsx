@@ -7,100 +7,105 @@ import Footer from "./Footer";
 export const PersonalCare = () => {
   const array = [
     {
-      image: "../images/sub.png",
-      title: "muji sala kawadi Plates Set | 25 Plates, 25 Forks, 25 Knives",
-      ads: "Ads by Etsy seller",
-      description: "This premium biodegradable plates set includes 25 plates, 25 forks, and 25 knives, making it perfect for any event or gathering. Made from eco-friendly materials, this set is designed to provide convenience without compromising on sustainability. Each piece is crafted to be sturdy and reliable, ensuring a pleasant dining experience.",
-      specifications: [
-        "Material: Biodegradable Materials",
-        "Dimensions: Various",
-        "Weight: Light",
-        "Color: Natural",
-        "Usage: Disposable, Ideal for events",
-        "Care Instructions: Dispose of after use"
-      ],
-      rate: 29,
-      cost: 2000,
+      image: "../images/cottonbud.jpeg",
+      title: "Quest 200 Cotton Buds | Cotton Wool With Bamboo Stem | High Quality Ear Buds",
+  ads: "Ads by Earthwise",
+  description: "These high-quality ear buds feature 100% cotton wool tips with a durable bamboo stem, combining eco-friendliness with effective functionality. Perfect for daily hygiene needs, they offer a sustainable alternative to traditional plastic stemmed cotton buds.",
+  specifications: [
+    "Material: 100% Cotton Wool, Bamboo Stem",
+    "Quantity: 200 Buds",
+    "Weight: Lightweight",
+    "Color: Natural Bamboo",
+    "Usage: Personal Care, Hygiene",
+    "Care Instructions: Store in a dry place"
+  ],
+  rate: 45,
+  cost: 350
     },
     {
-      image: "../images/stand.jpg",
-      title: "Handmade Bamboo Stand | Elegant and Sustainable | Perfect for Home Decor",
-      ads: "Ads by Local Artisan",
-      description: "This elegant bamboo stand is handcrafted with care by local artisans. Its sleek design makes it a perfect addition to any home decor, blending seamlessly with both modern and traditional styles. Made from 100% bamboo, it is not only sustainable but also durable and stylish.",
-      specifications: [
-        "Material: 100% Bamboo",
-        "Dimensions: 12 x 8 x 20 inches",
-        "Weight: 1.5 kg",
-        "Color: Natural Bamboo",
-        "Usage: Suitable for indoor and outdoor use",
-        "Care Instructions: Wipe with a dry cloth"
-      ],
-      rate: 45,
-      cost: 3500,
-    },
-    {
-      image: "../images/vases.jpg",
-      title: "Bamboo Vases | Set of 3 | Eco-Friendly | Natural Home Decor",
-      ads: "Ads by Green Home",
-      description: "This set of three bamboo vases adds a touch of natural elegance to any home. Crafted from sustainable bamboo, these vases are perfect for holding your favorite flowers or as standalone decorative pieces. Their eco-friendly design ensures a beautiful and sustainable addition to your decor.",
-      specifications: [
-        "Material: 100% Bamboo",
-        "Dimensions: Varies by Vase",
-        "Weight: Lightweight",
-        "Color: Natural Bamboo",
-        "Usage: Ideal for indoor use",
-        "Care Instructions: Wipe with a dry cloth"
-      ],
-      rate: 33,
-      cost: 1500,
-    },
-    {
-      image: "../images/decor.png",
-      title: "Bamboo Cutlery Set | Travel-Friendly | 100% Biodegradable",
-      ads: "Ads by EcoLiving",
-      description: "This bamboo cutlery set is designed for travelers who value sustainability. The set includes forks, knives, and spoons, all made from 100% biodegradable bamboo. Conveniently portable and eco-friendly, it's perfect for meals on the go or picnics.",
-      specifications: [
-        "Material: 100% Bamboo",
-        "Dimensions: Compact Set",
-        "Weight: Lightweight",
-        "Color: Natural Bamboo",
-        "Usage: Travel-Friendly, Eco-Friendly",
-        "Care Instructions: Hand wash and dry thoroughly"
-      ],
-      rate: 50,
-      cost: 1200,
-    },
-    {
-      image: "../images/board.webp",
-      title: "Sustainable Bamboo Kitchen Utensils | 5-Piece Set | Ergonomic Design",
+      image: "../images/haircomb.jpeg",
+      title: "Bamboo Pointed Wide Tooth Comb | Hair Care | Bathroom | Eco Friendly | Plastic Free | Sustainable | Plant Based | Compostable | Natural",
       ads: "Ads by Earthwise",
-      description: "This set of five bamboo kitchen utensils combines functionality with sustainability. Each piece is ergonomically designed for comfort and ease of use, and made from 100% bamboo, ensuring durability and eco-friendliness. Perfect for all your cooking needs.",
+      description: "The Bamboo Pointed Wide Tooth Comb is designed for gentle detangling and everyday hair care. Made from 100% natural bamboo, this eco-friendly comb is perfect for all hair types, helping reduce breakage and maintain healthy hair. Its wide-tooth design is especially beneficial for curly and thick hair.",
       specifications: [
         "Material: 100% Bamboo",
-        "Dimensions: Standard Utensil Sizes",
+        "Dimensions: 20cm x 5cm",
         "Weight: Lightweight",
         "Color: Natural Bamboo",
-        "Usage: Kitchen Use",
+        "Usage: Hair Care",
         "Care Instructions: Hand wash and dry thoroughly"
-      ],
-      rate: 37,
-      cost: 1800,
-    },
-    {
-      image: "../images/full.jpg",
-      title: "Bamboo Fiber Dinnerware Set | 4 Plates, 4 Bowls, 4 Cups",
-      ads: "Ads by Nature's Choice",
-      description: "This bamboo fiber dinnerware set includes 4 plates, 4 bowls, and 4 cups, providing a complete dining solution with an eco-friendly touch. Made from bamboo fiber, this set is both sustainable and durable, designed for everyday use and easy to clean.",
-      specifications: [
-        "Material: Bamboo Fiber",
-        "Dimensions: Standard Sizes",
-        "Weight: Lightweight",
-        "Color: Natural Bamboo",
-        "Usage: Everyday Dining",
-        "Care Instructions: Dishwasher safe"
       ],
       rate: 42,
-      cost: 2400,
+      cost: 1200
+    },
+    {
+      image: "../images/lotionbottle.jpeg",
+      title: "Bamboo Lotion Bottle | Refillable | Eco-Friendly | Sustainable | Plastic-Free | Natural Skincare | Bathroom Essential",
+  ads: "Ads by Earthwise",
+  description: "This Bamboo Lotion Bottle offers a stylish and sustainable solution for your skincare routine. Made from 100% bamboo with a durable, refillable design, it helps reduce plastic waste while adding a touch of natural elegance to your bathroom. Perfect for lotions, creams, or liquid soaps.",
+  specifications: [
+    "Material: 100% Bamboo and Glass (Inner Bottle)",
+    "Capacity: 200ml",
+    "Dimensions: 15cm x 6cm",
+    "Weight: Lightweight",
+    "Color: Natural Bamboo",
+    "Usage: Skincare, Liquid Storage",
+    "Care Instructions: Hand wash and dry thoroughly; refill as needed"
+  ],
+  rate: 45,
+  cost: 1500
+    },
+    {
+      image: "../images/toothbrush.jpeg",
+      title: "NUDUKO Biodegradable Bamboo Toothbrushes | 10-Piece Set | BPA-Free Soft Bristles | Eco-Friendly | Compostable | Natural Oral Care",
+  ads: "Sustainably Yours - Eco Conscious Living",
+  description: "Switch to a greener lifestyle with the NUDUKO Biodegradable Bamboo Toothbrushes. This 10-piece set features soft, BPA-free bristles, ensuring a gentle yet effective clean. Made from natural bamboo, these toothbrushes are fully compostable and perfect for those committed to reducing plastic waste. Ideal for daily oral care.",
+  specifications: [
+    "Material: 100% Bamboo (Handle) and BPA-Free Nylon (Bristles)",
+    "Bristle Type: Soft",
+    "Quantity: 10 Toothbrushes",
+    "Color: Natural Bamboo Handle with Green Bristles",
+    "Usage: Daily Oral Care",
+    "Eco-Friendly: Biodegradable and Compostable",
+    "Care Instructions: Store in a dry place after use"
+  ],
+  rate: 55,
+  cost: 1200
+    },
+    {
+      image: "../images/hairbrush.jpeg",
+      title: "100% Compostable Plastic-Free Hair Brush Set | Bamboo & Natural Rubber | Includes Cotton Pouch & Brush Cleaner | Eco-Friendly Gift",
+  ads: "Earth-Conscious Beauty - Your Sustainable Choice",
+  description: "Embrace eco-friendly hair care with this 100% compostable, plastic-free hairbrush set. Crafted from sustainable bamboo and natural rubber, this set includes a brush cleaner and a cotton pouch, making it a perfect gift for those committed to reducing their environmental impact. Ships next day for quick delivery.",
+  specifications: [
+    "Material: 100% Bamboo (Handle), Natural Rubber (Bristle Base)",
+    "Included: Cotton Pouch, Brush Cleaner",
+    "Dimensions: Standard Hair Brush Size",
+    "Weight: Lightweight and Durable",
+    "Color: Natural Bamboo",
+    "Usage: Suitable for All Hair Types",
+    "Eco-Friendly: Fully Compostable and Plastic-Free",
+    "Care Instructions: Hand wash brush and pouch, air dry"
+  ],
+  rate: 40,
+  cost: 1500
+    },
+    {
+      image: "../images/soapbar.jpeg",
+      title: "Brockton Bamboo Bathroom Accessories | Elegant & Sustainable | 5-Piece Set",
+  ads: "Upgrade Your Bathroom - Go Green with Brockton",
+  description: "Elevate your bathroom decor with the Brockton Bamboo Bathroom Accessories set. This 5-piece set includes everything you need for an elegant and eco-friendly bathroom upgrade. Crafted from premium bamboo, these accessories are not only stylish but also sustainable, making them the perfect choice for a green lifestyle.",
+  specifications: [
+    "Material: 100% Bamboo",
+    "Included: Soap Dispenser, Toothbrush Holder, Soap Dish, Tumbler, Trash Bin",
+    "Finish: Smooth and Water-Resistant",
+    "Color: Natural Bamboo",
+    "Usage: Bathroom Accessories",
+    "Eco-Friendly: Sustainable and Renewable Material",
+    "Care Instructions: Wipe clean with a damp cloth, avoid soaking"
+  ],
+  rate: 45,
+  cost: 2200
     },
   ];
 
@@ -123,7 +128,7 @@ export const PersonalCare = () => {
               <div className="ml-2 text-gray-600">({data.rate})</div>
             </div>
             <div className="text-lg font-bold text-green-600 mb-4">RS {data.cost}</div>
-            <Link to={`/productdetail/personalcare/${index}`}>                   
+            <Link to={`/personalcare/${index}`}>                   
 
               <button className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
                 View Details
