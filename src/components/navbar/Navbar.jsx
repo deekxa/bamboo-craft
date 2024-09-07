@@ -2,18 +2,28 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
+import {  UserButton } from "@clerk/clerk-react";
+import { ShoppingBag, ShoppingBasket } from "lucide-react";
 
 const Navbar = () => {
   return (
     <div className="relative w-full bg-gradient-to-r from-green-500 via-yellow-500 to-green-800 h-20 flex items-center px-8 shadow-lg z-40">
-      <div className="flex items-center flex-shrink-0">
-        <img
+      
+      <Link to="/">
+      <div className="flex items-center flex-shrink-0 cursor-pointer">
+     
+  <img
           src="/images/bamboologo.png"
           alt="Bamboo Craft Logo"
           className="h-16 w-16 object-contain"
+          
         />
+
+   
+      
         <h1 className="text-2xl font-bold text-white ml-3">Bamboo Craft</h1>
       </div>
+           </Link>
 
       <div className="flex-grow flex items-center justify-between ml-8">
         <div className="relative flex-grow max-w-xs">
@@ -26,6 +36,16 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center text-lg font-semibold text-white gap-8 ml-8">
+            <Link
+            to="/cart"
+            className="hover:text-yellow-300 transition duration-300"
+          >
+            <div className="flex gap-1 items-center justify-center">
+ <ShoppingBasket />
+            Cart
+            </div>
+           
+          </Link>
           <Link
             to="/"
             className="hover:text-yellow-300 transition duration-300"
@@ -79,12 +99,8 @@ const Navbar = () => {
           >
             About Us
           </Link>
-          <Link
-            to="/login"
-            className="hover:text-yellow-300 transition duration-300"
-          >
-          <FaUser />
-          </Link>
+
+       <UserButton/>
         </div>
       </div>
     </div>
