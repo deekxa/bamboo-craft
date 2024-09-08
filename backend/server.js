@@ -9,6 +9,7 @@ const getDecor = require("./routes/get-decor-route");
 const getLighting = require("./routes/get-lighting-route");
 const getCare = require("./routes/get-care-route");
 const createPayment = require("./routes/payment-route");
+const contactRoutes = require("./routes/contactRoutes");
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-
+console.log(process.env.MY_EMAIL, process.env.YOY_KNOW_WHAT_IS_IT);
 const MONGODB_URL =
   "mongodb+srv://dikshyak88:jyuthrAun9e1cwvG@cluster0.u0wpe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 if (!MONGODB_URL) {
@@ -64,4 +65,5 @@ app.use("/backend/", getDecor);
 app.use("/backend/", getLighting);
 app.use("/backend/", getCare);
 app.use("/backend/", createPayment);
+app.use("/backend/", contactRoutes);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

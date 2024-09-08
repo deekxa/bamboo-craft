@@ -9,7 +9,6 @@ const ProductDetail = () => {
   const location = useLocation();
     const { addToCart } = useCart();
   const { product } = location.state || {};  // Safely extract the product from state
-  console.log("Product received in ProductDetail: ", product); 
   if (!product) {
     return <div>Product not found</div>;  // Handle case where no product is found
   }

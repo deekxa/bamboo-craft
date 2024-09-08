@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import HomePage from "./components/Home";
@@ -7,6 +6,7 @@ import AboutUs from "./components/AboutUs";
 import { Lighting } from "./components/Lighting";
 import { Decor } from "./components/Decor";
 import { PersonalCare } from "./components/PersonalCare";
+import ContactUs from "./components/contact";
 import {
   QueryClient,
   QueryClientProvider,
@@ -42,7 +42,7 @@ function App() {
                 <Route path="/lighting" element={<Lighting />} />
                 <Route path="/decor/:id" element={<ProductDetail />} />
                 <Route path="/cart" element={<Cart />} />
-
+                <Route path="/contact" element={<ContactUs />} />
                 <Route path="/personalcare" element={<PersonalCare />} />
               </Routes>
             </SignedIn>

@@ -6,7 +6,7 @@ function AddProduct({formOpeningStateTrigger}) {
     title: "",
     description: "",
     specifications: [], // Initialize as an array
-    cost: 0,
+    cost: "",
   });
 
   // Handle input change
@@ -26,15 +26,34 @@ function AddProduct({formOpeningStateTrigger}) {
     });
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    API.post("/care",formData)
-    formOpeningStateTrigger(false);
-    // Submit form data to server or perform necessary action
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  // Sanitize the 'cost' field
+  const sanitizeInput = (input) => {
+    if (input === "") {
+      return "0"; // Convert empty string to "0"
+    }
+    const extractedNumber = input.match(/\d+/); // Extract numbers from the string
+    return extractedNumber ? extractedNumber[0].toString() : "0"; // Return extracted number or "0"
   };
 
+
+  // Only modify the 'cost' field, leaving the other form data unchanged
+  const sanitizedFormData = {
+    ...formData, 
+    cost: sanitizeInput(formData.cost),
+  };
+
+  // Submit the form data
+  API.post("/care", sanitizedFormData)
+    .then(() => {
+      formOpeningStateTrigger(false); // Close form after successful submission
+    })
+    .catch((error) => {
+      console.error("Error submitting form:", error);
+    });
+};
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -83,7 +102,7 @@ function AddProduct({formOpeningStateTrigger}) {
         <div>
           <label className="block text-gray-700 font-medium mb-2">Cost:</label>
           <input
-            type="text"
+            type="Number"
             name="cost"
             value={formData.cost}
             onChange={handleChange}

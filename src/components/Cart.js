@@ -3,24 +3,24 @@ import React from "react";
 import { useUser } from "@clerk/clerk-react"; // Get user email from Clerk
 import { useCart } from "./CartContext";
 import { API } from "../utils";
+ // Import the cn utility
 
 const Cart = () => {
   const { cart, clearCart } = useCart();
   const { user } = useUser(); // Get authenticated user's email
 
-  
 
   const handleCheckout = async () => {
     // Handle checkout logic (e.g., creating a payment entry)
     const paymentData = {
       email: user.emailAddresses[0].emailAddress,
       items: cart,
-      total: cart.reduce((sum, item) => sum + item.cost, 0),
+      total: cart.reduce((sum, item) => sum + Number(item.cost), 0),
     };
+console.log(cart);
+    API.post("/payment", paymentData);
 
-    // await API.post("/payment", paymentData);
-    console.log(paymentData);
-    
+   
     clearCart();
     alert("Payment successful! A confirmation email has been sent.");
   };
