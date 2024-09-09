@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
-import { UserButton } from "@clerk/clerk-react";
+import  CustomUserButton  from "../user-button"
 import { ShoppingBag, ShoppingBasket, Filter } from "lucide-react";
 import { useCart } from "../CartContext";
 import { cn } from "../../utils";
@@ -149,7 +149,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
             Contact Us
           </Link>
 
-          <UserButton />
+          <CustomUserButton />
         </div>
       </div>
     </div>

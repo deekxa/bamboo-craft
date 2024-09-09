@@ -9,7 +9,9 @@ const getDecor = require("./routes/get-decor-route");
 const getLighting = require("./routes/get-lighting-route");
 const getCare = require("./routes/get-care-route");
 const createPayment = require("./routes/payment-route");
-const contactRoutes = require("./routes/contactRoutes");
+const authenticateRoutes = require("./routes/contactRoutes");
+
+const contactRoutes = require("./routes/authenticate-admin-route");
 
 dotenv.config();
 
@@ -66,4 +68,5 @@ app.use("/backend/", getLighting);
 app.use("/backend/", getCare);
 app.use("/backend/", createPayment);
 app.use("/backend/", contactRoutes);
+app.use("/backend/", authenticateRoutes);
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
