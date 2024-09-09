@@ -9,9 +9,9 @@ const getDecor = require("./routes/get-decor-route");
 const getLighting = require("./routes/get-lighting-route");
 const getCare = require("./routes/get-care-route");
 const createPayment = require("./routes/payment-route");
-const authenticateRoutes = require("./routes/contactRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
-const contactRoutes = require("./routes/authenticate-admin-route");
+const authenticateRoutes = require("./routes/authenticate-admin-route");
 
 dotenv.config();
 

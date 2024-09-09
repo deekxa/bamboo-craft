@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { API } from "../utils";
+import { useApproval } from "./approvalContext";
+import { useNavigate } from "react-router-dom";
 
-function AddProduct({formOpeningStateTrigger}) {
+function AddProduct({ formOpeningStateTrigger }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    specifications: [], // Initialize as an array
+    specifications: [],
     cost: "",
   });
+  const { addToApproval } = useApproval();
+  const navigate = useNavigate();
 
-  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,46 +20,42 @@ function AddProduct({formOpeningStateTrigger}) {
     });
   };
 
-  // Handle specifications (comma-separated)
   const handleSpecsChange = (e) => {
     setFormData({
       ...formData,
-      specifications: e.target.value.split(",").map((spec) => spec.trim()), // Split and trim whitespace
+      specifications: e.target.value.split(",").map((spec) => spec.trim()),
     });
   };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Sanitize the 'cost' field
-  const sanitizeInput = (input) => {
-    if (input === "") {
-      return "0"; // Convert empty string to "0"
-    }
-    const extractedNumber = input.match(/\d+/); // Extract numbers from the string
-    return extractedNumber ? extractedNumber[0].toString() : "0"; // Return extracted number or "0"
+    const sanitizeInput = (input) => {
+      if (input === "") {
+        return "0";
+      }
+      const extractedNumber = input.match(/\d+/);
+      return extractedNumber ? extractedNumber[0].toString() : "0";
+    };
+
+    const sanitizedFormData = {
+      ...formData,
+      cost: sanitizeInput(formData.cost),
+      productType: "care", // Set the product type to "care"
+    };
+
+    console.log("Adding product:", sanitizedFormData); // Debug log
+    addToApproval(sanitizedFormData);
+
+    // Navigate to approval page
+    navigate("/care");
+
   };
 
-
-  // Only modify the 'cost' field, leaving the other form data unchanged
-  const sanitizedFormData = {
-    ...formData, 
-    cost: sanitizeInput(formData.cost),
-  };
-
-  // Submit the form data
-  API.post("/care", sanitizedFormData)
-    .then(() => {
-      formOpeningStateTrigger(false); // Close form after successful submission
-    })
-    .catch((error) => {
-      console.error("Error submitting form:", error);
-    });
-};
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-        Add New Decor
+        Add New Care Product
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -92,8 +90,8 @@ const handleSubmit = (e) => {
           <input
             type="text"
             name="specifications"
-            placeholder="example Material: Bamboo Fiber,Dimensions: Varies by Vase"
-            value={formData.specifications.join(", ")} // Display the array as a string
+            placeholder="e.g., Material: Cotton, Size: Large"
+            value={formData.specifications.join(", ")}
             onChange={handleSpecsChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -102,7 +100,7 @@ const handleSubmit = (e) => {
         <div>
           <label className="block text-gray-700 font-medium mb-2">Cost:</label>
           <input
-            type="Number"
+            type="number"
             name="cost"
             value={formData.cost}
             onChange={handleChange}

@@ -3,6 +3,7 @@ const Care = require("../models/care"); // Import the Decor model
 // Controller to create a new Decor document
 const createCare = async (req, res) => {
   try {
+    console.log("Received request body:", req.body);
     const { title, description, specifications, cost } = req.body;
 
     // Ensure the required fields are provided

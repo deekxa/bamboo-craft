@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { API } from "../utils";
+import { useApproval } from "./approvalContext";
+import { useNavigate } from "react-router-dom";
 
-function AddProduct({formOpeningStateTrigger}) {
+function AddProduct({ formOpeningStateTrigger }) {
+  const { addToApproval } = useApproval();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    specifications: [], // Initialize as an array
+    specifications: [],
     cost: "",
   });
 
-  // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,44 +21,36 @@ function AddProduct({formOpeningStateTrigger}) {
     });
   };
 
-  // Handle specifications (comma-separated)
   const handleSpecsChange = (e) => {
     setFormData({
       ...formData,
-      specifications: e.target.value.split(",").map((spec) => spec.trim()), // Split and trim whitespace
+      specifications: e.target.value.split(",").map((spec) => spec.trim()),
     });
   };
 
-  // Handle form submission
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Sanitize the 'cost' field
-  const sanitizeInput = (input) => {
-    if (input === "") {
-      return "0"; // Convert empty string to "0"
-    }
-    const extractedNumber = input.match(/\d+/); // Extract numbers from the string
-    return extractedNumber ? extractedNumber[0].toString() : "0"; // Return extracted number or "0"
+    const sanitizeInput = (input) => {
+      if (input === "") {
+        return "0";
+      }
+      const extractedNumber = input.match(/\d+/);
+      return extractedNumber ? extractedNumber[0].toString() : "0";
+    };
+
+    const sanitizedFormData = {
+      ...formData,
+      cost: sanitizeInput(formData.cost),
+      productType: "decor", // Set the product type to "decor"
+    };
+
+    console.log("Adding decor product:", sanitizedFormData); // Debug log
+    addToApproval(sanitizedFormData);
+
+    navigate("/decor");
+    formOpeningStateTrigger(false);
   };
-
-
-  // Only modify the 'cost' field, leaving the other form data unchanged
-  const sanitizedFormData = {
-    ...formData, 
-    cost: sanitizeInput(formData.cost),
-  };
-
-  // Submit the form data
-  API.post("/decor", sanitizedFormData)
-    .then(() => {
-      formOpeningStateTrigger(false); // Close form after successful submission
-    })
-    .catch((error) => {
-      console.error("Error submitting form:", error);
-    });
-};
-
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
@@ -95,8 +90,8 @@ const handleSubmit = (e) => {
           <input
             type="text"
             name="specifications"
-            placeholder="example Material: Bamboo Fiber,Dimensions: Varies by Vase"
-            value={formData.specifications.join(", ")} // Display the array as a string
+            placeholder="e.g., Material: Bamboo Fiber, Dimensions: 10x15 cm"
+            value={formData.specifications.join(", ")}
             onChange={handleSpecsChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

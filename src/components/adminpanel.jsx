@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import Navbar from "./navbar/Navbar";
-import {API} from "../utils";
+import { API } from "../utils";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 const AdminPanel = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   // Function to validate password complexity
   const validatePassword = (password) => {
-    const lengthCriteria = /.{6,}/; 
-    const uppercaseCriteria = /[A-Z]/; 
-    const lowercaseCriteria = /[a-z]/; 
-    const digitCriteria = /[0-9]/; 
-    const specialCharCriteria = /[!@#$%^&*(),.?":{}|<>]/; 
+    const lengthCriteria = /.{6,}/;
+    const uppercaseCriteria = /[A-Z]/;
+    const lowercaseCriteria = /[a-z]/;
+    const digitCriteria = /[0-9]/;
+    const specialCharCriteria = /[!@#$%^&*(),.?":{}|<>]/;
 
     return (
       lengthCriteria.test(password) &&
@@ -23,9 +27,9 @@ const AdminPanel = () => {
     );
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!username || !password) {
       setError("Both fields are required.");
@@ -48,21 +52,30 @@ const AdminPanel = () => {
 
     // Clear error if validation passes
     setError("");
-    
-  const res = await API.post("/authenticate", { username, password })
-    console.log(res.data)
+    try {
+      const res = await API.post("/authenticate", { username, password });
+      if (res.data === "authorized") {
+        navigate("/approval");
+      }
+    } catch (error) {
+      console.log("user not authorized");
+    }
   };
 
   return (
     <div>
-      <Navbar /> 
+      <Navbar />
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Admin Login</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-center">
+            Admin Login
+          </h2>
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-gray-700 font-medium mb-2">Username</label>
+              <label className="block text-gray-700 font-medium mb-2">
+                Username
+              </label>
               <input
                 type="text"
                 placeholder="Enter your username"
@@ -73,7 +86,9 @@ const AdminPanel = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-medium mb-2">Password</label>
+              <label className="block text-gray-700 font-medium mb-2">
+                Password
+              </label>
               <input
                 type="password"
                 placeholder="Enter your password"

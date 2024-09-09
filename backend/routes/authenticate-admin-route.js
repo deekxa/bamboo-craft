@@ -9,7 +9,11 @@ router.post("/authenticate", (req, res) => {
 
   // Call the controller function
   const result = authenticateUser(username, password);
-
+  if (result === "authorized") {
+    res.send(result);
+  } else {
+    res.send("Unauthorized");
+  }
   // Send back the response
   res.send(result);
 });

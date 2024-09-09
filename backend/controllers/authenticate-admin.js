@@ -1,11 +1,16 @@
-
-const { ADMIN_USER, ADMIN_PASSWORD } = process.env;
-
 // Function to handle authentication
 exports.authenticateUser = (username, password) => {
-  if (username === ADMIN_USER && password === ADMIN_PASSWORD) {
-    console.log("hi")
-    return "authwinced";
+  console.log(
+    username,
+    password,
+    process.env.ADMIN_USER,
+    process.env.ADMIN_PASSWORD
+  );
+  if (
+    username === process.env.ADMIN_USER &&
+    password === process.env.ADMIN_PASSWORD
+  ) {
+    return "authorized";
   }
-  return "not authwinced";
+  return "not authorized";
 };
