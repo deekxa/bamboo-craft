@@ -87,11 +87,13 @@ export const PersonalCare = () => {
         )}
         <button
           onClick={handleRefresh}
-          className="bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 flex items-center"
+          className={`bg-green-500 ${
+            openForm ? "hidden" : ""
+          } text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 flex items-center`}
           disabled={isFetching}
         >
           <RefreshCw
-            className={`mr-2 h-5 w-5 ${isFetching ? "animate-spin" : ""}`}
+            className={`mr-2 h-5 w-5 ${isFetching ? "animate-spin" : ""} `}
           />
           Refresh
         </button>

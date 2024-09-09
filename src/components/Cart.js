@@ -1,28 +1,29 @@
+// export default Cart;
 import React from "react";
-
-import { useUser } from "@clerk/clerk-react"; // Get user email from Clerk
+import { useUser } from "@clerk/clerk-react";
 import { useCart } from "./CartContext";
 import { API } from "../utils";
- // Import the cn utility
-
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
-  const { cart, clearCart } = useCart();
-  const { user } = useUser(); // Get authenticated user's email
-
-
+  const { cart, clearCart, removeFromCart } = useCart();
+  const { user } = useUser();
+  const navigate = useNavigate();
   const handleCheckout = async () => {
-    // Handle checkout logic (e.g., creating a payment entry)
     const paymentData = {
       email: user.emailAddresses[0].emailAddress,
       items: cart,
       total: cart.reduce((sum, item) => sum + Number(item.cost), 0),
     };
-console.log(cart);
+    console.log(cart);
     API.post("/payment", paymentData);
+    navigate("/");
 
-   
     clearCart();
     alert("Payment successful! A confirmation email has been sent.");
+  };
+
+  const handleRemoveItem = (index) => {
+    removeFromCart(index);
   };
 
   return (
@@ -45,7 +46,7 @@ console.log(cart);
                 >
                   <div className="flex items-center">
                     <img
-                      src={item.image} // Ensure you have image URLs in your product data
+                      src={item.image}
                       alt={item.title}
                       className="w-20 h-20 rounded-md object-cover"
                     />
@@ -56,8 +57,16 @@ console.log(cart);
                       <p className="text-gray-500">{item.description}</p>
                     </div>
                   </div>
-                  <div className="text-lg flex gap-1 font-bold text-green-600">
-                    <span>Rs</span> <span>{item.cost} </span>
+                  <div className="flex items-center">
+                    <div className="text-lg flex gap-1 font-bold text-green-600 mr-4">
+                      <span>Rs</span> <span>{item.cost}</span>
+                    </div>
+                    <button
+                      onClick={() => handleRemoveItem(index)}
+                      className="text-red-500 hover:text-red-700 transition-colors"
+                    >
+                      Remove
+                    </button>
                   </div>
                 </li>
               ))}
@@ -83,6 +92,5 @@ console.log(cart);
     </div>
   );
 };
-
 
 export default Cart;
