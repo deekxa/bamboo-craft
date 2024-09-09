@@ -48,8 +48,7 @@ function AddProduct({ formOpeningStateTrigger }) {
     addToApproval(sanitizedFormData);
 
     // Navigate to approval page
-    navigate("/care");
-
+    navigate("/personalcare");
   };
 
   return (
