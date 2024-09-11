@@ -72,7 +72,7 @@ export const Lighting = () => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative animate-pageLoad">
       <Navbar
         setShowSearchGlobal={setShowSearchGlobal}
         onSearch={handleSearch}
@@ -81,12 +81,13 @@ export const Lighting = () => {
         {!openForm && (
           <button
             onClick={() => setOpenForm(true)}
-            className="bg-green-500  text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-400 animate-pulse transition-transform transform hover:scale-105 duration-300"
           >
             Add Product
           </button>
         )}
-        {/* <button
+        {/* Uncomment if you need the Refresh button
+        <button
           onClick={handleRefresh}
           className={`bg-green-500 ${
             openForm ? "hidden" : ""
@@ -99,19 +100,19 @@ export const Lighting = () => {
           Refresh
         </button> */}
       </div>
-      <div className="text-2xl font-bold text-green-500 h-[10vh] items-center sm:text-3xl sm:leading-relaxed flex justify-center">
+      <div className="text-2xl font-bold text-green-500 h-[10vh] items-center sm:text-3xl sm:leading-relaxed flex justify-center animate-heading">
         Lighting
       </div>
       {!openForm && (
-        <div className="pb-10 px-10 grid grid-cols-4 gap-8">
+        <div className="pb-10 px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 animate-fadeIn">
           {filteredArray.map((data, index) => (
             <div
               key={index}
-              className="shadow-md border border-gray-200 p-4 rounded-lg hover:shadow-lg transition-shadow duration-300"
+              className="relative shadow-md border border-gray-200 p-4 rounded-lg hover:shadow-lg transition-transform transform hover:scale-105 duration-300 hover:animate-flip"
             >
-              <div className="mb-4">
+              <div className="mb-4 overflow-hidden">
                 <img
-                  className="w-full h-48 object-cover rounded-lg"
+                  className="w-full h-48 object-cover rounded-lg transition-transform duration-300 transform hover:scale-110"
                   src={data.image}
                   alt={data.title}
                 />
@@ -122,8 +123,8 @@ export const Lighting = () => {
               <div className="text-lg font-bold text-green-600 mb-4">
                 RS {data.cost}
               </div>
-              <Link to={`/decor/${index}`} state={{ product: data }}>
-                <button className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200">
+              <Link to={`/lighting/${index}`} state={{ product: data }}>
+                <button className="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-transform transform hover:scale-105 duration-200">
                   View Details
                 </button>
               </Link>

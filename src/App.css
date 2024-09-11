@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -11,4 +11,244 @@ body {
 
 .App {
   text-align: center;
+} */
+
+
+/* Add these styles to your CSS file */
+.opacity-0 {
+  opacity: 0;
 }
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.translate-y-0 {
+  transform: translateY(0);
+}
+
+.translate-y-10 {
+  transform: translateY(10px);
+}
+
+
+.animation{
+
+  animation: anime 2s  ease  forwards;
+  /* opacity: 0; */
+}
+
+@keyframes anime {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Fade-in animation for the form container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input field focus animation */
+@keyframes inputFocus {
+  0% {
+    box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(66, 153, 225, 0.4);
+  }
+}
+
+/* Button hover animation */
+@keyframes buttonHover {
+  0% {
+    background-color: #38a169;
+    transform: scale(1);
+  }
+  100% {
+    background-color: #48bb78;
+    transform: scale(1.05);
+  }
+}
+
+/* Apply the animations */
+.form-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+input:focus, textarea:focus {
+  animation: inputFocus 0.4s ease-out;
+}
+
+button:hover {
+  animation: buttonHover 0.3s forwards;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-flip {
+  animation: flip 1s infinite;
+}
+
+@keyframes pageLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headingAnimation {
+  0% {
+    transform: scale(1);
+    color: #4ade80; /* Light green */
+  }
+  50% {
+    transform: scale(1.1);
+    color: #22c55e; /* Darker green */
+  }
+  100% {
+    transform: scale(1);
+    color: #4ade80; /* Light green */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-pageLoad {
+  animation: pageLoad 1s ease-out;
+}
+
+.animate-heading {
+  animation: headingAnimation 3s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-flip {
+  animation: flip 1s infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes delayAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.5s ease-in;
+}
+
+.animate-slideIn {
+  animation: slideIn 1s ease-out;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+
+
