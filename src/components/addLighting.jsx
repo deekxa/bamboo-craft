@@ -110,7 +110,7 @@ function AddProduct({ formOpeningStateTrigger }) {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full bg-green-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
           Add Product
         </button>

@@ -1,8 +1,8 @@
 const express = require("express");
-const { getCare } = require("../controllers/getCare"); // Import the controller
+const { getCare } = require("../controllers/getCare"); 
 
 const router = express.Router();
 
-router.get("/getCare", getCare); // Define the route for fetching all decor items
+router.get("/getCare", getCare); 
 
 module.exports = router;

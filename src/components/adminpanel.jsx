@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import Navbar from "./navbar/Navbar";
 import { API } from "../utils";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 const AdminPanel = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // Function to validate password complexity
+  
   const validatePassword = (password) => {
     const lengthCriteria = /.{6,}/;
     const uppercaseCriteria = /[A-Z]/;
@@ -27,22 +27,23 @@ const AdminPanel = () => {
     );
   };
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
+   
     if (!username || !password) {
       setError("Both fields are required.");
       return;
     }
 
-    // Username validation (e.g., minimum 3 characters)
+   
     if (username.length < 3) {
       setError("Username must be at least 3 characters long.");
       return;
     }
 
-    // Password validation
+    
     if (!validatePassword(password)) {
       setError(
         "Password must be at least 6 characters long and include uppercase, lowercase, digit, and special character."
@@ -50,15 +51,20 @@ const AdminPanel = () => {
       return;
     }
 
-    // Clear error if validation passes
+   
     setError("");
+    
     try {
       const res = await API.post("/authenticate", { username, password });
+
+      
       if (res.data === "authorized") {
         navigate("/approval");
+      } else {
+        setError("Incorrect username or password.");
       }
     } catch (error) {
-      console.log("user not authorized");
+      setError("An error occurred while processing your request. Please try again.");
     }
   };
 

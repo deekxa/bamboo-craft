@@ -80,12 +80,12 @@ export const PersonalCare = () => {
         {!openForm && (
           <button
             onClick={() => setOpenForm(true)}
-            className="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Add Product
           </button>
         )}
-        <button
+        {/* <button
           onClick={handleRefresh}
           className={`bg-green-500 ${
             openForm ? "hidden" : ""
@@ -96,7 +96,7 @@ export const PersonalCare = () => {
             className={`mr-2 h-5 w-5 ${isFetching ? "animate-spin" : ""} `}
           />
           Refresh
-        </button>
+        </button> */}
       </div>
       <div className="text-2xl font-bold text-green-500 h-[10vh] items-center sm:text-3xl sm:leading-relaxed flex justify-center">
         Personal care

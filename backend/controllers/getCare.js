@@ -1,10 +1,10 @@
-const Care = require("../models/care"); // Import the Decor model
+const Care = require("../models/care"); 
 
-// Controller to get all Decor documents
+
 const getCare = async (req, res) => {
   try {
-    const careItems = await Care.find(); // Fetch all documents
-    res.status(200).json(careItems); // Return the fetched data
+    const careItems = await Care.find(); 
+    res.status(200).json(careItems); 
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });

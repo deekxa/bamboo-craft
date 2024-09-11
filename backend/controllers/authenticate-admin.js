@@ -1,4 +1,4 @@
-// Function to handle authentication
+
 exports.authenticateUser = (username, password) => {
   console.log(
     username,

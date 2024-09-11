@@ -14,7 +14,7 @@ console.log("total",total);
     await newPayment.save();
 
     sendPaymentConfirmationEmail(email, items, total);
-    // Optionally send an email confirmation (using a service like SendGrid or Nodemailer)
+    
 
     res.status(201).json({ message: "Payment created successfully" });
   } catch (error) {

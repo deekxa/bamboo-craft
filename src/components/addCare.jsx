@@ -3,14 +3,15 @@ import { useApproval } from "./approvalContext";
 import { useNavigate } from "react-router-dom";
 
 function AddProduct({ formOpeningStateTrigger }) {
+  const { addToApproval } = useApproval();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     specifications: [],
     cost: "",
   });
-  const { addToApproval } = useApproval();
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,14 +42,14 @@ function AddProduct({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "care", // Set the product type to "care"
+      productType: "care", 
     };
 
-    console.log("Adding product:", sanitizedFormData); // Debug log
+    console.log("Adding care product:", sanitizedFormData); 
     addToApproval(sanitizedFormData);
 
-    // Navigate to approval page
-    navigate("/personalcare");
+    navigate("/personalcare"); 
+    formOpeningStateTrigger(false); 
   };
 
   return (
@@ -99,7 +100,7 @@ function AddProduct({ formOpeningStateTrigger }) {
         <div>
           <label className="block text-gray-700 font-medium mb-2">Cost:</label>
           <input
-            type="number"
+            type="text"
             name="cost"
             value={formData.cost}
             onChange={handleChange}
@@ -110,7 +111,7 @@ function AddProduct({ formOpeningStateTrigger }) {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full bg-green-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
         >
           Add Product
         </button>

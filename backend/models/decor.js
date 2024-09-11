@@ -14,7 +14,7 @@ const DecorSchema = new mongoose.Schema({
     required: true,
   },
   specifications: {
-    type: [String], // An array of strings for specifications
+    type: [String], 
     required: true,
   },
   cost: {

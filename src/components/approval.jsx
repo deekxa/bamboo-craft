@@ -1,17 +1,12 @@
+// src/components/Approval.jsx
 import React from "react";
 import { useApproval } from "./approvalContext";
-import { useUser } from "@clerk/clerk-react";
 import { API } from "../utils";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Approval = () => {
-  const { approvals, handleApprove } = useApproval();
-  const navigate = useNavigate(); // Initialize useNavigate
-
-  const totalCost = approvals.reduce(
-    (sum, item) => sum + Number(item.cost || 0),
-    0
-  );
+  const { approvals, handleApprove, removeFromApproval } = useApproval();
+  const navigate = useNavigate();
 
   const handleApproveSubmit = async () => {
     if (approvals.length === 0) {
@@ -19,32 +14,34 @@ const Approval = () => {
       return;
     }
 
-    const item = approvals[0]; // There's only one item
-    const { productType, ...sanitizedItem } = item; // Remove productType from the item data
-
-    // Format the data according to the backend expectations
-    const formattedData = {
-      title: sanitizedItem.title,
-      description: sanitizedItem.description,
-      specifications: sanitizedItem.specifications,
-      cost: sanitizedItem.cost,
-    };
-
-    console.log("Item being approved:", formattedData); // Debug log
-
-    const endpoint = `/${productType}`; // This will be '/decor', '/care', or '/lighting'
-    console.log("Endpoint:", endpoint); // Debug
-    console.log("Approval Data:", formattedData); // Debug
-    navigate("/");
     try {
-      const response = await API.post(endpoint, formattedData);
-      console.log("Server response:", response);
+      await Promise.all(
+        approvals.map(async (item) => {
+          const { productType, ...sanitizedItem } = item;
+
+          const formattedData = {
+            title: sanitizedItem.title,
+            description: sanitizedItem.description,
+            specifications: sanitizedItem.specifications,
+            cost: sanitizedItem.cost,
+          };
+
+          console.log("Item being approved:", formattedData);
+
+          const endpoint = `/${productType}`;
+          const response = await API.post(endpoint, formattedData);
+          console.log("Server response:", response);
+        })
+      );
+
       handleApprove();
-      alert("Product created successfully!");
+      alert("Products created successfully!");
     } catch (error) {
       console.error("Error submitting approval:", error);
-      alert("There was an error creating the product. Please try again.");
+      alert("There was an error creating the products. Please try again.");
     }
+
+    navigate("/");
   };
 
   return (
@@ -78,28 +75,31 @@ const Approval = () => {
                         {item.title}
                       </h3>
                       <p className="text-gray-500">{item.description}</p>
-                      {item.specifications &&
-                        item.specifications.length > 0 && (
-                          <p className="text-sm text-gray-500">
-                            Specifications: {item.specifications.join(", ")}
-                          </p>
-                        )}
+                      {item.specifications && item.specifications.length > 0 && (
+                        <p className="text-sm text-gray-500">
+                          Specifications: {item.specifications.join(", ")}
+                        </p>
+                      )}
                       <p className="text-sm text-gray-500">
                         Type: {item.productType}
                       </p>
                     </div>
                   </div>
-                  <div className="text-lg flex gap-1 font-bold text-green-600">
-                    <span>Rs</span> <span>{item.cost}</span>
+                  <div className="flex items-center gap-4">
+                    <div className="text-lg font-bold text-green-600">
+                      Rs {item.cost}
+                    </div>
+                    <button
+                      className="py-2 px-4 bg-red-500 text-white rounded-md hover:bg-red-600"
+                      onClick={() => removeFromApproval(index)}
+                    >
+                      Remove
+                    </button>
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="flex justify-between items-center mt-8">
-              <div className="text-xl font-bold">
-                Total:{" "}
-                <span className="text-green-600 ml-1">Rs {totalCost}</span>
-              </div>
+            <div className="flex justify-end items-center mt-8">
               <button
                 onClick={handleApproveSubmit}
                 className="py-3 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"

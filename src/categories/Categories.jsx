@@ -8,19 +8,6 @@ return (
     </link>
   </div>
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 const categories = () => {
   return (

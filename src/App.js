@@ -31,7 +31,6 @@ function App() {
           <BrowserRouter>
             <header>
               <SignedOut>
-                {/* Center the sign-in form using Tailwind */}
                 <div className="flex justify-center items-center h-screen">
                   <SignIn />
                 </div>

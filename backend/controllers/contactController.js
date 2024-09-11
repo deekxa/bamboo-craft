@@ -3,7 +3,6 @@ const nodemailer = require("nodemailer");
 const sendContactEmail = async (req, res) => {
   const { name, email, message, userEmail } = req.body;
 
-  // Create a transporter object using the default SMTP transport
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -12,7 +11,6 @@ const sendContactEmail = async (req, res) => {
     },
   });
 
-  // Email options
   const mailOptions = {
     from: process.env.MY_EMAIL,
     to: process.env.MY_EMAIL,
@@ -20,12 +18,11 @@ const sendContactEmail = async (req, res) => {
     text: `You have a new contact form submission from ${name} (${email}). 
     Message:
     ${message}
-    
-    User's Email: ${email}`,
+  
+    User's Email: ${userEmail || "Not provided"}`,
   };
-
+  
   try {
-    // Send email
     await transporter.sendMail(mailOptions);
     res.status(200).send({ message: "Form submitted successfully" });
   } catch (error) {
