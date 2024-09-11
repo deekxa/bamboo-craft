@@ -9,6 +9,7 @@ import { PersonalCare } from "./components/PersonalCare";
 import ContactUs from "./components/contact";
 import Approval from "./components/approval";
 import { ApprovalProvider } from "./components/approvalContext";
+import "./App.css";
 
 import {
   QueryClient,
