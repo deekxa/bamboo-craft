@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useApproval } from "./approvalContext";
 import { useNavigate } from "react-router-dom";
 
-function AddProduct({ formOpeningStateTrigger }) {
+function AddCare({ formOpeningStateTrigger }) {
   const { addToApproval } = useApproval();
   const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ function AddProduct({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "care", 
+      productType: "care", // Adjust this for personal care
     };
 
     console.log("Adding care product:", sanitizedFormData); 
@@ -120,4 +120,4 @@ function AddProduct({ formOpeningStateTrigger }) {
   );
 }
 
-export default AddProduct;
+export default AddCare;

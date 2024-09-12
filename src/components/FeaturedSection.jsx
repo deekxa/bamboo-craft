@@ -1,24 +1,35 @@
 import React from 'react';
-import { FaLeaf, FaRecycle } from 'react-icons/fa'; // Example for adding icons if needed
 
 const FeaturedSection = () => {
   return (
-    <div
-      className="relative w-full h-screen bg-cover bg-center overflow-hidden"
-      style={{ backgroundImage: "url('/Images/bamboo.jpg')", backgroundPosition: 'center', backgroundSize: 'cover' }}
-    >
-      {/* Gradient overlay with fade-in effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-40 animate-fadeIn"></div>
+    <div className="relative w-full h-screen bg-cover bg-center overflow-hidden">
+      {/* Background with Animation */}
+      <div
+        className="absolute inset-0 bg-cover bg-center transition-all duration-850 ease-in-out animate-zoomBackground"
+        style={{
+          backgroundImage: "url('/Images/bamboo.jpg')",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+      ></div>
 
-      {/* Text content with cool animations */}
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-80"></div>
+
+      {/* Content with Animated Text */}
       <div className="relative flex flex-col items-start ml-12 justify-center h-full px-6 text-white">
-        <h1 className="text-6xl font-bold mb-6 text-white drop-shadow-xl leading-tight animate-slideInLeft">
+        {/* Heading Text with Flicker and Color Wave Animation */}
+        <h1 className="text-6xl font-bold mb-6 drop-shadow-xl leading-tight animate-fadeUp animate-colorWave">
           Think Sustainable
         </h1>
-        <p className="text-4xl font-semibold mb-6 text-white drop-shadow-xl leading-snug animate-slideInRight">
+        
+        {/* Subheading Text with Letter Spacing and Flicker Effect */}
+        <p className="text-4xl font-semibold mb-6 drop-shadow-xl leading-snug animate-fadeUp animate-delay-200 animate-letterSpacing animate-textFlicker">
           Think Bamboo
         </p>
-        <p className="text-2xl font-light text-white drop-shadow-xl leading-relaxed animate-fadeIn">
+
+        {/* Quote Text with Fade-up and Subtle Flicker */}
+        <p className="text-2xl font-light drop-shadow-xl leading-relaxed animate-fadeUp animate-delay-400 animate-textFlicker">
           "Be like bamboo. The higher you grow, the deeper you bow."
         </p>
       </div>
