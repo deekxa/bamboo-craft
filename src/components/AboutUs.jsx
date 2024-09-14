@@ -8,8 +8,6 @@ const AboutUs = () => {
   return (
     <>
       <Navbar />
-
-      {/* Main About Us Section */}
       <section className="px-4 lg:px-4 py-6 bg-gray-100 animate-fadeInUp duration-700">
         <div className="max-w-screen-md mx-auto text-center">
           <h1 className="text-2xl font-bold text-gray-800 pt-2 pb-4 sm:text-3xl sm:leading-relaxed transition-all duration-500 ease-in-out transform hover:scale-105">
@@ -26,8 +24,6 @@ const AboutUs = () => {
           </p>
         </div>
       </section>
-
-      {/* Image Background Section */}
       <article className="relative bg-[url(https://images.pexels.com/photos/6712946/pexels-photo-6712946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)] bg-cover bg-center bg-no-repeat animate-fadeInSlow">
         <div className="absolute inset-0 bg-black/60 sm:bg-gradient-to-r sm:from-black/70 sm:to-black/40"></div>
         <div className="relative mx-auto max-w-screen-xl px-4 py-24 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
@@ -54,8 +50,6 @@ const AboutUs = () => {
           </div>
         </div>
       </article>
-
-      {/* Quote Section */}
       <div className="container mx-auto px-6 py-10"></div>
       <div className="flex flex-col md:flex-row items-center justify-between relative w-full h-auto md:h-64 bg-FAF9F6 shadow-2xl rounded-lg p-8 animate-fadeInUp duration-700">
         <div className="w-8/12 text-xl">

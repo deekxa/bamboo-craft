@@ -1,4 +1,4 @@
-// src/hooks/useRevealOnScroll.js
+
 import { useInView } from "react-intersection-observer";
 
 const useRevealOnScroll = () => {

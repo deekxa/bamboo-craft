@@ -39,10 +39,6 @@ export const Payment = () => {
         }
 
     }
-    
-    
-    
-    
     useEffect(()=>{
      initiatepayment()   
     },[])
@@ -53,10 +49,6 @@ export const Payment = () => {
      }   
     },[data]
     )
-
-
-
-
   return (
      
     <form style={{visibility: "hidden"}} ref={formref} action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">

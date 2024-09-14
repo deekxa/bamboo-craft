@@ -20,9 +20,8 @@ const Cart = () => {
 
 
     console.log(cart);
-    // await API.post("/payment", paymentData);
+  
     clearCart();
-    // alert("Payment successful! A confirmation email has been sent.");
   };
 
   return (

@@ -8,9 +8,9 @@ import Navbar from "../navbar/Navbar";
 const ProductDetail = () => {
   const location = useLocation();
     const { addToCart } = useCart();
-  const { product } = location.state || {};  // Safely extract the product from state
+  const { product } = location.state || {};  
   if (!product) {
-    return <div>Product not found</div>;  // Handle case where no product is found
+    return <div>Product not found</div>; 
   }
 
   return (

@@ -11,7 +11,7 @@ const AdminPanel = () => {
   const [error, setError] = useState('');
 
   const handleBack = () => {
-    navigate(-1); // Navigates back to the previous page
+    navigate(-1); 
   };
 
   const validatePassword = (password) => {
@@ -50,7 +50,7 @@ const AdminPanel = () => {
       return;
     }
 
-    setError(''); // Clear previous error
+    setError(''); 
     try {
       const res = await API.post('/authenticate', { username, password });
 
@@ -69,21 +69,21 @@ const AdminPanel = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="flex w-full max-w-4xl mx-auto">
-        {/* Decorative Element */}
+        
         <div className="relative w-full md:w-1/2 flex items-center justify-center bg-green-100">
           <img
-            src="/Images/formpic.jpeg" // Ensure correct path
+            src="/Images/formpic.jpeg" 
             alt="Decorative background"
             className="w-full h-full object-cover"
-            style={{ height: '100%', width: '100%' }} // Ensure size matches form
+            style={{ height: '100%', width: '100%' }} 
           />
 
-          {/* Bouncy Balls */}
+        
           <div className="absolute top-10 left-10 w-24 h-24 bg-green-300 rounded-full opacity-70 animate-bounce"></div>
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-200 rounded-full opacity-70 animate-ping"></div>
         </div>
 
-        {/* Form Section */}
+        
         <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 space-y-6 relative">
           <button
             onClick={handleBack}

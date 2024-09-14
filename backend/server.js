@@ -18,11 +18,9 @@ dotenv.config();
 const app = express();
 const PORT = 4000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
 console.log(process.env.MY_EMAIL, process.env.YOY_KNOW_WHAT_IS_IT);
 const MONGODB_URL =
   "mongodb+srv://dikshyak88:jyuthrAun9e1cwvG@cluster0.u0wpe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";

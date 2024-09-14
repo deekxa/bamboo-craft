@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
 import CustomUserButton from "../user-button";
 import { GiShoppingCart } from "react-icons/gi";
-import { Filter } from "lucide-react"; // Ensure the Filter icon is imported
+import { Filter } from "lucide-react"; 
 
 import { useCart } from "../CartContext";
 import { cn } from "../../utils";
 
 const Navbar = ({ setShowSearchGlobal, onSearch }) => {
-  const { cart, clearCart } = useCart();
+  const { cart } = useCart();
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [minPrice, setMinPrice] = useState("");
@@ -48,7 +48,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
         <div className=" text-3xl flex items-center flex-shrink-0 cursor-pointer">
           <img
             src="/images/pandalogo.png"
-            alt=" Bamboo Craft Logo"
+            alt="Bamboo Craft Logo"
             className="h-16 w-16 object-contain"
           />
           <h1 className="text-2xl font-bold text-white ml-3">Bamboo Craft</h1>
@@ -56,11 +56,11 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
       </Link>
 
       <div className="flex-grow flex items-center justify-between ml-8">
-        <div className="flex items-center ">
+        <div className="flex items-center">
           <div
             className={cn(
               "relative flex-grow max-w-xs",
-              showSearch ? " visible" : "invisible"
+              showSearch ? "visible" : "invisible"
             )}
           >
             <input
@@ -76,8 +76,8 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
           <div
             className={cn(
               "flex items-center relative",
-              showFilters ? " invisible" : "visible",
-              showSearch ? " visible" : "invisible"
+              showFilters ? "invisible" : "visible",
+              showSearch ? "visible" : "invisible"
             )}
           >
             <button
@@ -89,7 +89,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
             <div
               className={cn(
                 "flex items-center ml-1 absolute",
-                showFilters ? "visible " : "invisible"
+                showFilters ? "visible" : "invisible"
               )}
             >
               <input
@@ -116,8 +116,8 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
             className="hover:text-yellow-300 transition duration-300"
           >
             <div className="flex gap-1 items-center justify-center">
-            <GiShoppingCart className="text-4xl" />     
-                     <span
+              <GiShoppingCart className="text-4xl" />
+              <span
                 className={cn(
                   "text-text-1 font-bold",
                   cart.length > 0

@@ -1,4 +1,4 @@
-// src/components/Approval.jsx
+
 import React from "react";
 import { useApproval } from "./approvalContext";
 import { API } from "../utils";

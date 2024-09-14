@@ -41,10 +41,10 @@ function AddProduct({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "lighting", // Set the product type to "lighting"
+      productType: "lighting", 
     };
 
-    console.log("Adding lighting product:", sanitizedFormData); // Debug log
+    console.log("Adding lighting product:", sanitizedFormData);
     addToApproval(sanitizedFormData);
 
     navigate("/lighting");

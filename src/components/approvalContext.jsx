@@ -1,4 +1,3 @@
-// src/components/approvalContext.jsx
 import React, { createContext, useContext, useState } from "react";
 
 const ApprovalContext = createContext();

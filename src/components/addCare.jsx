@@ -42,7 +42,7 @@ function AddCare({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "care", // Adjust this for personal care
+      productType: "care", 
     };
 
     console.log("Adding care product:", sanitizedFormData); 
