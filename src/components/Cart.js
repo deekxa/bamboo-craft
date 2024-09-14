@@ -15,10 +15,14 @@ const Cart = () => {
       items: cart,
       total: cart.reduce((sum, item) => sum + Number(item.cost), 0),
     };
+    const amount = cart.reduce((sum, item) => sum + Number(item.cost), 0);
+    navigate("/payment/product1234/"+amount)
+
+
     console.log(cart);
-    await API.post("/payment", paymentData);
+    // await API.post("/payment", paymentData);
     clearCart();
-    alert("Payment successful! A confirmation email has been sent.");
+    // alert("Payment successful! A confirmation email has been sent.");
   };
 
   return (

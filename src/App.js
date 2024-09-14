@@ -21,6 +21,7 @@ import ProductDetail from "./components/product/ProductDetail";
 import { CartProvider } from "./components/CartContext";
 import Adminpanel from "./components/adminpanel";
 import Cart from "./components/Cart";
+import { Payment } from "./components/payment/Payment";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ function App() {
                   <Route path="/contact" element={<ContactUs />} />
                   <Route path="/personalcare" element={<PersonalCare />} />
                   <Route path="/approval" element={<Approval />} />
+                  <Route path="/payment/:id/:amount" element={<Payment />} />
                 </Routes>
               </SignedIn>
             </div>

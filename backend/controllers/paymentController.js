@@ -59,6 +59,10 @@ const sendPaymentConfirmationEmail = async (email, items, total) => {
       console.log("Email sent: " + info.response);
     }
   });
+
+
   
   
 }
+
+
