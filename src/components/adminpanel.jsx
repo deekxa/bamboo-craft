@@ -1,5 +1,7 @@
+// AdminPanel.js
+
 import React, { useState } from 'react';
-import { API } from '../utils';
+import { API } from '../utils'; // Assuming API utility is set up for making requests
 import { useNavigate } from 'react-router-dom';
 import { XIcon } from '@heroicons/react/solid';
 
@@ -50,15 +52,15 @@ const AdminPanel = () => {
       return;
     }
 
-    setError(''); 
+    setError(''); // Clear any previous errors
     try {
       const res = await API.post('/authenticate', { username, password });
 
       if (res.data === 'authorized') {
         navigate('/approval');
-      } else if (res.data === 'Incorrect username') {
+      } else if (res.data === 'incorrect username') {
         setError('Incorrect username.');
-      } else if (res.data === 'Incorrect password') {
+      } else if (res.data === 'incorrect password') {
         setError('Incorrect password.');
       }
     } catch (error) {
@@ -78,12 +80,10 @@ const AdminPanel = () => {
             style={{ height: '100%', width: '100%' }} 
           />
 
-        
           <div className="absolute top-10 left-10 w-24 h-24 bg-green-300 rounded-full opacity-70 animate-bounce"></div>
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-200 rounded-full opacity-70 animate-ping"></div>
         </div>
 
-        
         <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 space-y-6 relative">
           <button
             onClick={handleBack}
