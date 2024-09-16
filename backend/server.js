@@ -20,6 +20,10 @@ const PORT = 4000;
 
 app.use(cors());
 app.use(express.json());
+app.get("/",(req,res)=>{
+    return res.send("hello world")
+
+})
 
 console.log(process.env.MY_EMAIL, process.env.YOY_KNOW_WHAT_IS_IT);
 const MONGODB_URL =
