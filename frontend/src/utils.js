@@ -2,7 +2,7 @@ import axios from "axios";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 export const API = axios.create({
-  baseURL: "http://localhost:4000/backend",
+  baseURL: "https://bamboo-backend.vercel.app/backend",
 
 });
 

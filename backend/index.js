@@ -18,7 +18,11 @@ dotenv.config();
 const app = express();
 const PORT = 4000;
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://bamboo-frontend.vercel.app"],
+  methods: ["*"],
+  credentials: true
+}));
 app.use(express.json());
 app.get("/",(req,res)=>{
     return res.send("hello world")
