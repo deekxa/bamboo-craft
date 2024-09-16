@@ -90,15 +90,15 @@ const Form = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex items-center justify-center w-full h-screen">
-        <div className="bg-white px-8 py-10 rounded-3xl border border-gray-300 shadow-md max-w-md w-full">
-          <h1 className="text-4xl font-semibold flex justify-center">
+      <div className="flex items-center justify-center min-h-screen px-4 py-8 bg-gray-100">
+        <div className="bg-white px-6 py-8 rounded-xl border border-gray-300 shadow-lg max-w-md w-full">
+          <h1 className="text-3xl font-semibold text-center mb-6">
             {isSignup ? "Sign Up" : "Log In"}
           </h1>
           <div className="flex justify-between mb-4">
             <button
               onClick={() => toggleFormType()}
-              className={`py-2 px-4 rounded-xl ${
+              className={`py-2 px-4 rounded-xl text-sm sm:text-base ${
                 !isSignup
                   ? "bg-green-500 text-white"
                   : "bg-gray-200 text-gray-800"
@@ -108,7 +108,7 @@ const Form = () => {
             </button>
             <button
               onClick={() => toggleFormType()}
-              className={`py-2 px-4 rounded-xl ${
+              className={`py-2 px-4 rounded-xl text-sm sm:text-base ${
                 isSignup
                   ? "bg-green-500 text-white"
                   : "bg-gray-200 text-gray-800"
@@ -117,62 +117,61 @@ const Form = () => {
               Sign Up
             </button>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {formFields.map((field, index) => (
               <div key={index}>
-                <label>{field.label}</label>
+                <label className="block text-sm font-medium mb-1">
+                  {field.label}
+                </label>
                 <input
-                  className="w-full p-3 mt-1 border border-gray-300 rounded-xl bg-transparent"
+                  className="w-full p-3 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder={field.placeholder}
                   {...register(field.name)}
                   type={field.type}
                 />
                 {errors[field.name] && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-xs mt-1">
                     {errors[field.name]?.message}
                   </p>
                 )}
               </div>
             ))}
             {isSignup && (
-              <div className="flex justify-between items-center">
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id="terms-and-conditions"
-                    {...register("terms")}
-                  />
-                  <label
-                    className="ml-2 text-sm"
-                    htmlFor="terms-and-conditions"
-                  >
-                    I agree to terms and conditions
-                  </label>
-                </div>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="terms-and-conditions"
+                  {...register("terms")}
+                  className="h-4 w-4 text-green-500 border-gray-300 rounded"
+                />
+                <label
+                  className="text-sm"
+                  htmlFor="terms-and-conditions"
+                >
+                  I agree to terms and conditions
+                </label>
                 {errors.terms && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-xs mt-1">
                     {errors.terms?.message}
                   </p>
                 )}
               </div>
             )}
-            <div className="flex flex-col gap-4">
-              <button
-                type="submit"
-                className="py-4 rounded-xl bg-green-500 text-white font-bold transition-transform transform hover:scale-105"
-              >
-                {isSignup ? "Create Account" : "Log In"}
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full py-3 bg-green-500 text-white rounded-lg font-bold transition-transform transform hover:scale-105"
+            >
+              {isSignup ? "Create Account" : "Log In"}
+            </button>
           </form>
-          <div className="mt-6 text-center">
-            <p className="text-sm">
+          <div className="mt-6 text-center text-sm">
+            <p>
               {isSignup
                 ? "Already have an account? Click here to "
                 : "Don’t have an account? Click here to "}
               <button
                 onClick={() => toggleFormType()}
-                className="text-green-500 ml-1"
+                className="text-green-500 font-medium"
               >
                 {isSignup ? "log in" : "sign up"}
               </button>

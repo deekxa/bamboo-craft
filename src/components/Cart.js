@@ -1,7 +1,6 @@
 import React from "react";
 import { useUser } from "@clerk/clerk-react";
 import { useCart } from "./CartContext";
-import { API } from "../utils";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -16,23 +15,20 @@ const Cart = () => {
       total: cart.reduce((sum, item) => sum + Number(item.cost), 0),
     };
     const amount = cart.reduce((sum, item) => sum + Number(item.cost), 0);
-    navigate("/payment/product1234/"+amount)
-
-
+    navigate(`/payment/product1234/${amount}`);
     console.log(cart);
-  
     clearCart();
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-5">
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+    <div className="min-h-screen bg-gray-100 py-6 px-4 sm:px-6 md:px-8">
+      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-4 sm:p-6 md:p-8">
         <button
           onClick={() => navigate(-1)}
-          className="mb-4 text-gray-700 hover:text-gray-900 transition-colors"
+          className="mb-4 text-gray-700 hover:text-gray-900 transition-colors flex items-center"
         >
           <svg
-            className="w-6 h-6 inline-block"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -48,7 +44,7 @@ const Cart = () => {
           <span className="ml-2">Back</span>
         </button>
 
-        <h1 className="text-3xl font-bold text-gray-700 text-center mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-700 text-center mb-6 sm:mb-8">
           Your Cart
         </h1>
         {cart.length === 0 ? (
@@ -61,30 +57,30 @@ const Cart = () => {
               {cart.map((item, index) => (
                 <li
                   key={index}
-                  className={`flex items-center justify-between py-4 transition-opacity duration-300 ${
+                  className={`flex flex-col sm:flex-row items-start sm:items-center justify-between py-4 transition-opacity duration-300 ${
                     removingIndex === index ? "opacity-0" : "opacity-100"
                   }`}
                 >
-                  <div className="flex items-center">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center w-full">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-20 h-20 rounded-md object-cover"
+                      className="w-full sm:w-20 sm:h-20 h-40 object-cover rounded-md"
                     />
-                    <div className="ml-4">
-                      <h3 className="text-xl font-semibold text-gray-700">
+                    <div className="ml-0 sm:ml-4 mt-4 sm:mt-0 w-full sm:w-auto">
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-700 truncate">
                         {item.title}
                       </h3>
                       <p className="text-gray-500">{item.description}</p>
                     </div>
                   </div>
-                  <div className="flex items-center">
-                    <div className="text-lg flex gap-1 font-bold text-green-600 mr-4">
-                      <span>Rs</span> <span>{item.cost} </span>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mt-4 sm:mt-0">
+                    <div className="text-lg flex gap-1 font-bold text-green-600 mr-0 sm:mr-4">
+                      <span>Rs</span> <span>{item.cost}</span>
                     </div>
                     <button
                       onClick={() => removeFromCart(index)}
-                      className="text-red-600 hover:text-red-800"
+                      className="text-red-600 hover:text-red-800 mt-2 sm:mt-0"
                     >
                       Remove
                     </button>
@@ -92,17 +88,16 @@ const Cart = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex justify-between items-center mt-8">
-              <div className="text-xl font-bold">
+            <div className="flex flex-col sm:flex-row justify-between items-center mt-6 sm:mt-8">
+              <div className="text-lg sm:text-xl font-bold">
                 Total:
                 <span className="text-green-600 ml-1">
                   Rs {cart.reduce((sum, item) => sum + Number(item.cost), 0)}
                 </span>
               </div>
-
               <button
                 onClick={handleCheckout}
-                className="py-3 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                className="mt-4 sm:mt-0 py-3 px-4 sm:px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
               >
                 Checkout
               </button>

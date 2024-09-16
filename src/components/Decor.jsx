@@ -76,7 +76,7 @@ export const Decor = () => {
         setShowSearchGlobal={setShowSearchGlobal}
         onSearch={handleSearch}
       />
-      <div className="flex justify-end gap-4 items-center px-4 py-2">
+      <div className="flex flex-col sm:flex-row justify-end gap-4 items-center px-4 py-2">
         {!openForm && (
           <button
             onClick={() => setOpenForm(true)}
@@ -90,7 +90,7 @@ export const Decor = () => {
         Decor
       </div>
       {!openForm && (
-        <div className="pb-10 px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 animate-fadeIn">
+        <div className="pb-10 px-4 sm:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 animate-fadeIn">
           {filteredArray.map((data, index) => (
             <div
               key={index}

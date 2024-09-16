@@ -41,7 +41,7 @@ function AddProduct({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "lighting", 
+      productType: "lighting",
     };
 
     console.log("Adding lighting product:", sanitizedFormData);
@@ -52,8 +52,8 @@ function AddProduct({ formOpeningStateTrigger }) {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+    <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
+      <h2 className="text-xl font-semibold text-gray-800 mb-4 text-center">
         Add New Lighting
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">

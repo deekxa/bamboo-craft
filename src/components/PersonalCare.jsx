@@ -76,7 +76,7 @@ export const PersonalCare = () => {
         setShowSearchGlobal={setShowSearchGlobal}
         onSearch={handleSearch}
       />
-      <div className="flex justify-end gap-4 items-center px-4 py-2">
+      <div className="flex flex-col sm:flex-row justify-end gap-4 items-center px-4 py-2">
         {!openForm && (
           <button
             onClick={() => setOpenForm(true)}
@@ -103,13 +103,13 @@ export const PersonalCare = () => {
       </div>
 
       {!openForm && (
-        <div className="pb-10 px-10 grid grid-cols-4 gap-8">
+        <div className="pb-10 px-4 sm:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 animate-fadeIn">
           {filteredArray.map((data, index) => (
             <div
               key={index}
               className="relative shadow-md border border-gray-200 p-4 rounded-lg hover:shadow-lg transition-transform transform hover:scale-105 duration-300 hover:animate-flip"
             >
-              <div className="mb-4">
+              <div className="mb-4 overflow-hidden">
                 <img
                   className="w-full h-48 object-cover rounded-lg transition-transform duration-300 transform hover:scale-110"
                   src={data.image}

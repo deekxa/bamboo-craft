@@ -5,7 +5,6 @@ import { FaUser } from "react-icons/fa6";
 import CustomUserButton from "../user-button";
 import { GiShoppingCart } from "react-icons/gi";
 import { Filter } from "lucide-react"; 
-
 import { useCart } from "../CartContext";
 import { cn } from "../../utils";
 
@@ -16,6 +15,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [showFilters, setShowFilters] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // For mobile menu toggle
 
   useEffect(() => {
     if (setShowSearchGlobal) {
@@ -42,6 +42,10 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
     setShowFilters(!showFilters);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <div className="relative w-full bg-gradient-to-r from-green-500 via-yellow-500 to-green-800 h-20 flex items-center px-8 shadow-lg z-40">
       <Link to="/">
@@ -55,7 +59,18 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
         </div>
       </Link>
 
-      <div className="flex-grow flex items-center justify-between ml-8">
+      {/* Mobile Menu Toggle */}
+      <div className="lg:hidden ml-auto">
+        <button
+          className="text-white text-3xl"
+          onClick={toggleMobileMenu}
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden lg:flex flex-grow items-center justify-between ml-8">
         <div className="flex items-center">
           <div
             className={cn(
@@ -129,13 +144,9 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
               </span>
             </div>
           </Link>
-          <Link
-            to="/"
-            className="hover:text-yellow-300 transition duration-300"
-          >
+          <Link to="/" className="hover:text-yellow-300 transition duration-300">
             Home
           </Link>
-
           <div className="relative group">
             <button className="flex items-center hover:text-yellow-300 transition duration-300">
               Products
@@ -175,24 +186,83 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
               </Link>
             </div>
           </div>
-
           <Link
             to="/aboutus"
             className="hover:text-yellow-300 transition duration-300"
           >
             About Us
           </Link>
-
           <Link
             to="/contact"
             className="hover:text-yellow-300 transition duration-300"
           >
             Contact Us
           </Link>
-
           <CustomUserButton />
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-0 left-0 w-full bg-green-800 text-white h-screen p-6 lg:hidden flex flex-col items-start">
+          <button
+            onClick={toggleMobileMenu}
+            className="ml-auto text-3xl mb-8"
+          >
+            &times;
+          </button>
+
+          <Link to="/" className="text-xl mb-4" onClick={toggleMobileMenu}>
+            Home
+          </Link>
+          <Link
+            to="/cart"
+            className="text-xl mb-4 flex gap-1 items-center"
+            onClick={toggleMobileMenu}
+          >
+            <GiShoppingCart className="text-4xl" />
+            {cart.length > 0 && (
+              <span className="bg-yellow-400 rounded-full p-2">{cart.length}</span>
+            )}
+          </Link>
+          <Link
+            to="/decor"
+            className="text-xl mb-4"
+            onClick={toggleMobileMenu}
+          >
+            Decor
+          </Link>
+          <Link
+            to="/personalcare"
+            className="text-xl mb-4"
+            onClick={toggleMobileMenu}
+          >
+            Personal Care
+          </Link>
+          <Link
+            to="/lighting"
+            className="text-xl mb-4"
+            onClick={toggleMobileMenu}
+          >
+            Lighting
+          </Link>
+          <Link
+            to="/aboutus"
+            className="text-xl mb-4"
+            onClick={toggleMobileMenu}
+          >
+            About Us
+          </Link>
+          <Link
+            to="/contact"
+            className="text-xl mb-4"
+            onClick={toggleMobileMenu}
+          >
+            Contact Us
+          </Link>
+          <CustomUserButton />
+        </div>
+      )}
     </div>
   );
 };

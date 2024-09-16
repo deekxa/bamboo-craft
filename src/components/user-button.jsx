@@ -17,14 +17,14 @@ const CustomUserButton = () => {
   return (
     <div className="relative">
       <button
-        className="flex items-center space-x-2 p-2 -full focus:outline-none"
+        className="flex items-center p-2 focus:outline-none"
         onClick={() => setOpen(!open)}
       >
         <HamburgerIcon className="h-8 w-8" />
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
+        <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg z-50 sm:w-48 w-full">
           <button
             onClick={() => navigate("/admin-panel")}
             className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"

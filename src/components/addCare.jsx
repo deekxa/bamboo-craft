@@ -42,19 +42,19 @@ function AddCare({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "care", 
+      productType: "care",
     };
 
-    console.log("Adding care product:", sanitizedFormData); 
+    console.log("Adding care product:", sanitizedFormData);
     addToApproval(sanitizedFormData);
 
-    navigate("/personalcare"); 
-    formOpeningStateTrigger(false); 
+    navigate("/personalcare");
+    formOpeningStateTrigger(false);
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+    <div className="max-w-sm mx-auto p-4 bg-white shadow-lg rounded-lg sm:max-w-md md:max-w-lg">
+      <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 text-center">
         Add New Care Product
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">

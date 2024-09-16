@@ -42,10 +42,10 @@ function AddProduct({ formOpeningStateTrigger }) {
     const sanitizedFormData = {
       ...formData,
       cost: sanitizeInput(formData.cost),
-      productType: "decor", 
+      productType: "decor",
     };
 
-    console.log("Adding decor product:", sanitizedFormData); 
+    console.log("Adding decor product:", sanitizedFormData);
     addToApproval(sanitizedFormData);
 
     navigate("/decor");
@@ -53,8 +53,8 @@ function AddProduct({ formOpeningStateTrigger }) {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+    <div className="max-w-sm mx-auto p-4 bg-white shadow-lg rounded-lg sm:max-w-md md:max-w-lg">
+      <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4 text-center">
         Add New Decor
       </h2>
       <form onSubmit={handleSubmit} className="space-y-4">

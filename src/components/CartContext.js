@@ -8,7 +8,7 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [removingIndex, setRemovingIndex] = useState(null);
 
-  
+  // Load cart from localStorage on mount
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -16,19 +16,21 @@ export const CartProvider = ({ children }) => {
     }
   }, []);
 
- 
+  // Save cart to localStorage whenever it changes
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
     } else {
-      localStorage.removeItem("cart"); 
+      localStorage.removeItem("cart"); // Clear localStorage when cart is empty
     }
   }, [cart]);
 
+  // Add a product to the cart
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
 
+  // Remove a product from the cart with animation
   const removeFromCart = (index) => {
     setRemovingIndex(index);
     setTimeout(() => {
@@ -37,9 +39,10 @@ export const CartProvider = ({ children }) => {
     }, 300);
   };
 
+  // Clear all items from the cart
   const clearCart = () => {
     setCart([]);
-    localStorage.removeItem("cart"); 
+    localStorage.removeItem("cart"); // Also clear localStorage
   };
 
   return (

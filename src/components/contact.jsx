@@ -10,7 +10,6 @@ const ContactUs = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
-   
     navigate('/');
     try {
       await API.post('/contact', { ...data, userEmail: user.emailAddresses[0].emailAddress });
@@ -23,19 +22,19 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="flex w-full max-w-4xl mx-auto">
-        <div className="relative w-full md:w-1/2 flex items-center justify-center bg-green-100">
+    <div className="min-h-screen flex flex-col justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row max-w-4xl mx-auto w-full">
+        <div className="relative w-full md:w-1/2 flex items-center justify-center bg-green-100 overflow-hidden">
           <img
             src="/Images/adminpic.jpeg"
-            alt="contactimage"
+            alt="contact image"
             className="w-full h-full object-cover"
           />
           <div className="absolute top-10 left-10 w-24 h-24 bg-green-300 rounded-full opacity-70 animate-bounce"></div>
           <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-200 rounded-full opacity-70 animate-ping"></div>
         </div>
 
-        <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 space-y-6 relative">
+        <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 space-y-6">
           <h2 className="text-center text-3xl font-extrabold text-gray-900">Contact Us</h2>
           <p className="mt-2 text-center text-sm text-gray-600">We'd love to hear from you!</p>
 
@@ -85,19 +84,19 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <button
+                type="submit"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:order-1"
+              >
+                Send Message
+              </button>
               <button
                 type="button"
                 onClick={() => navigate("/")}
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:order-2"
               >
                 Cancel
-              </button>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-              >
-                Send Message
               </button>
             </div>
           </form>

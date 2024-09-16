@@ -44,6 +44,6 @@ exports.finalizePayment = async (req, res) => {
   return res.send(
     "payment " +
       status +
-      "<br> <a href= 'http://localhost:3001'> Go To Home Page </a> "
+      "<br> <a href= 'http://localhost:3000'> Go To Home Page </a> "
   );
 };

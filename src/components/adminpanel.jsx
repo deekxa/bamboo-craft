@@ -1,7 +1,5 @@
-// AdminPanel.js
-
 import React, { useState } from 'react';
-import { API } from '../utils'; // Assuming API utility is set up for making requests
+import { API } from '../utils'; 
 import { useNavigate } from 'react-router-dom';
 import { XIcon } from '@heroicons/react/solid';
 
@@ -52,7 +50,7 @@ const AdminPanel = () => {
       return;
     }
 
-    setError(''); // Clear any previous errors
+    setError(''); 
     try {
       const res = await API.post('/authenticate', { username, password });
 
@@ -70,21 +68,22 @@ const AdminPanel = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="flex w-full max-w-4xl mx-auto">
+      <div className="flex flex-col md:flex-row w-full max-w-4xl mx-auto">
         
-        <div className="relative w-full md:w-1/2 flex items-center justify-center bg-green-100">
+        {/* Image Section */}
+        <div className="relative w-full md:w-1/2 flex items-center justify-center bg-green-100 h-64 md:h-auto">
           <img
-            src="/Images/formpic.jpeg" 
+            src="/Images/formpic.jpeg"
             alt="Decorative background"
             className="w-full h-full object-cover"
-            style={{ height: '100%', width: '100%' }} 
           />
 
-          <div className="absolute top-10 left-10 w-24 h-24 bg-green-300 rounded-full opacity-70 animate-bounce"></div>
-          <div className="absolute bottom-10 right-10 w-32 h-32 bg-green-200 rounded-full opacity-70 animate-ping"></div>
+          <div className="absolute top-10 left-10 w-16 h-16 bg-green-300 rounded-full opacity-70 animate-bounce"></div>
+          <div className="absolute bottom-10 right-10 w-20 h-20 bg-green-200 rounded-full opacity-70 animate-ping"></div>
         </div>
 
-        <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 space-y-6 relative">
+        {/* Form Section */}
+        <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-6 space-y-6 relative">
           <button
             onClick={handleBack}
             className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 focus:outline-none"
@@ -93,7 +92,7 @@ const AdminPanel = () => {
             <XIcon className="w-6 h-6" />
           </button>
 
-          <h2 className="text-center text-3xl font-extrabold text-gray-900">
+          <h2 className="text-center text-2xl sm:text-3xl font-extrabold text-gray-900">
             Admin Login
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
@@ -102,7 +101,7 @@ const AdminPanel = () => {
 
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="username" className="block text-sm font-medium text-gray-700">
                 Username
