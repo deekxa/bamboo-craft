@@ -19,7 +19,7 @@ const app = express();
 const PORT = 4000;
 
 app.use(cors({
-  origin: ["https://bamboo-frontend.vercel.app"],
+  origin: ["https://bamboo-frontend.vercel.app","http://localhost:3000,"],
   methods: ["*"],
   credentials: true
 }));

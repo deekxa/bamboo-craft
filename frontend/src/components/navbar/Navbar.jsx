@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
 import CustomUserButton from "../user-button";
 import { GiShoppingCart } from "react-icons/gi";
-import { Filter } from "lucide-react"; 
+import { Filter } from "lucide-react";
 import { useCart } from "../CartContext";
 import { cn } from "../../utils";
 
@@ -60,19 +60,34 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
       </Link>
 
       {/* Mobile Menu Toggle */}
+      <div
+            className={cn(
+              "w-40 ml-10 relative flex-grow max-w-xs",
+              showSearch ? "visible" : "invisible"
+            )}
+          >
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="pl-10 pr-4 py-2 rounded-full bg-gray-200 text-gray-800 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300"
+            />
+            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+          </div>
+
+
       <div className="lg:hidden ml-auto">
-        <button
-          className="text-white text-3xl"
-          onClick={toggleMobileMenu}
-        >
+        <button className="text-white text-3xl" onClick={toggleMobileMenu}>
           ☰
         </button>
       </div>
+      
 
       {/* Desktop Menu */}
-      <div className="hidden lg:flex flex-grow items-center justify-between ml-8">
+      <div className="hidden md:flex flex-grow items-center justify-between ml-8">
         <div className="flex items-center">
-          <div
+          {/* <div
             className={cn(
               "relative flex-grow max-w-xs",
               showSearch ? "visible" : "invisible"
@@ -86,7 +101,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
               className="pl-10 pr-4 py-2 rounded-full bg-gray-200 text-gray-800 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300"
             />
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
-          </div>
+          </div> */}
 
           <div
             className={cn(
@@ -112,14 +127,14 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
                 placeholder="Min Price"
                 value={minPrice}
                 onChange={handleMinPriceChange}
-                className="p-2 rounded-lg ml-2 bg-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300"
+                className="w-24 p-2 rounded-lg ml-2 bg-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300"
               />
               <input
                 type="number"
                 placeholder="Max Price"
                 value={maxPrice}
                 onChange={handleMaxPriceChange}
-                className="p-2 rounded-lg ml-2 bg-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300"
+                className="w-24 p-2 rounded-lg ml-2 bg-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition duration-300"
               />
             </div>
           </div>
@@ -144,7 +159,10 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
               </span>
             </div>
           </Link>
-          <Link to="/" className="hover:text-yellow-300 transition duration-300">
+          <Link
+            to="/"
+            className="hover:text-yellow-300 transition duration-300"
+          >
             Home
           </Link>
           <div className="relative group">
@@ -205,10 +223,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-0 left-0 w-full bg-green-800 text-white h-screen p-6 lg:hidden flex flex-col items-start">
-          <button
-            onClick={toggleMobileMenu}
-            className="ml-auto text-3xl mb-8"
-          >
+          <button onClick={toggleMobileMenu} className="ml-auto text-3xl mb-8">
             &times;
           </button>
 
@@ -222,14 +237,12 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
           >
             <GiShoppingCart className="text-4xl" />
             {cart.length > 0 && (
-              <span className="bg-yellow-400 rounded-full p-2">{cart.length}</span>
+              <span className="bg-yellow-400 rounded-full p-2">
+                {cart.length}
+              </span>
             )}
           </Link>
-          <Link
-            to="/decor"
-            className="text-xl mb-4"
-            onClick={toggleMobileMenu}
-          >
+          <Link to="/decor" className="text-xl mb-4" onClick={toggleMobileMenu}>
             Decor
           </Link>
           <Link
