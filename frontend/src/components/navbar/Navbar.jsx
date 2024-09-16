@@ -51,7 +51,7 @@ const Navbar = ({ setShowSearchGlobal, onSearch }) => {
       <Link to="/">
         <div className=" text-3xl flex items-center flex-shrink-0 cursor-pointer">
           <img
-            src="/images/pandalogo.png"
+            src="/Images/pandalogo.png"
             alt="Bamboo Craft Logo"
             className="h-16 w-16 object-contain"
           />
